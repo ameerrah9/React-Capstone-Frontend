@@ -27,3 +27,35 @@ Streak: -1
 StreakDescription: "L1"
 TeamID: 7
 Wins: 12
+
+# Parent Container common owner component is
+
+# Children Container
+
+# keep an array of the teams around
+
+# keep an array of the favorite teams around
+
+# Pieces of data in my application. We have:
+
+The original list of teams
+The search text the user has entered
+The filtered list of a users teams
+
+Which component needs to filter the team list based on state
+
+SearchBar needs to display the search text and checked state.
+
+# Routing our Client-Side app is going to have these routes
+
+/favorites/new
+
+/favorties
+
+/teams
+
+/about
+
+/login
+
+home page, about page, team page, users favorites page
