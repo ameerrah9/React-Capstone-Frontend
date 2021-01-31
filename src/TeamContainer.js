@@ -39,7 +39,6 @@ export default class Team extends Component {
   render() {
     return (
       <>
-        <h1>GAME ZONE</h1>
         <h2 >The Latest Teams:</h2>
         <TeamInfo teams={this.state.teams} />
       </>
