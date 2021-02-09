@@ -59,3 +59,7 @@ SearchBar needs to display the search text and checked state.
 /login
 
 home page, about page, team page, users favorites page
+
+# Nested Routes
+
+single team show page

@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 
-class SearchBar extends Component {
+class Fav extends Component {
     render() {
         return (
             <div>
-                
+                <p>Your Favorite Teams:</p>
+
             </div>
         );
     }
 }
 
-export default SearchBar;
+export default Fav;

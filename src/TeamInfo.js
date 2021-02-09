@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Team = ({
     City,
@@ -12,7 +13,7 @@ const Team = ({
   return (
 
     <div
-      key={Name}
+      key={TeamID}
       className="team"
     >
         <>
@@ -29,7 +30,19 @@ const Team = ({
   );
 };
 
-const Teams = ({ teams }) => <div className="team-list">{teams.map(Team)}</div>;
+const Teams = ({ teams }) => {
+  const renderTeams = Object.keys(teams).map(TeamID =>
+    <Link key={TeamID} to={`/teams/${TeamID}`}>{teams[TeamID].Name}</Link>
+  );
+ 
+  return (
+    <div>
+      {renderTeams}
+    </div>
+  );
+}
+
+//<div className="team-list">{teams.map(Team)}</div>;
 
 Teams.defaultProps = {
   teams: []
