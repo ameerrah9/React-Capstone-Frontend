@@ -11,7 +11,7 @@ const Team = ({
     TeamID
 }) => {
   return (
-
+    
     <div
       key={TeamID}
       className="team"
@@ -25,6 +25,7 @@ const Team = ({
       <>
       ({Wins} - {Losses})
       </>
+      <button>Add Team To Favorites</button>
 
     </div>
   );

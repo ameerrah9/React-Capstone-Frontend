@@ -1,9 +1,14 @@
 import React from 'react';
  
 class Login extends React.Component {
+
+  handleOnSubmit = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleOnSubmit}>
         <h1>Login</h1>
         <div>
           <input type="text" name="username" placeholder="Username" />

@@ -11,4 +11,10 @@ class Fav extends Component {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+      increaseFav: () => dispatch({ type: 'INCREASE_COUNT' })
+    };
+  };
+  
 export default Fav;

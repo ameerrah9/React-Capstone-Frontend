@@ -1,10 +1,5 @@
 import React from 'react';
 import './index.css';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
-import { render } from 'react-dom'
 import ReactDOM from 'react-dom';
 import App from './App';
 import { createStore } from 'redux';
@@ -13,7 +8,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 
 const initialState = {}
-const store = createStore(FavTeamListReducer);
+const store = createStore(FavTeamListReducer, initialState, composeWithDevTools())
 
 ReactDOM.render(
   <Provider store={store}>

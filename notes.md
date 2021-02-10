@@ -1,3 +1,12 @@
+rails g scaffold users firstname:stringlastname:string location:string username:string email:string img_src:string --no-test-framework
+
+rails g scaffold teams img_src:string cit:string name:string wins:integer losses:integer likes:integer conference_rank:integer --no-test-framework
+
+Models
+-User Model
+-Has_many teams
+-Team attributes
+
 AwayLosses: 5
 AwayWins: 3
 City: "Philadelphia"

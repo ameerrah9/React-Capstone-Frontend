@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Home from './Home';
-import Team from './TeamContainer';
+import Team from '../TeamContainer';
 import SearchBar from './SearchBar';
 import About from "./About";
 import Login from "./Login";
@@ -34,7 +34,17 @@ class NavBar extends React.Component {
           activeStyle={{
             background: 'darkred'
           }}
-        >Home</NavLink>
+        >Home
+        </NavLink>
+        <NavLink
+          to="/teams"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'darkred'
+          }}
+        >Teams
+        </NavLink>
         <NavLink
           to="/about"
           exact
@@ -42,7 +52,8 @@ class NavBar extends React.Component {
           activeStyle={{
             background: 'darkred'
           }}
-        >About</NavLink>
+        >About
+        </NavLink>
         <NavLink
           to="/login"
           exact
