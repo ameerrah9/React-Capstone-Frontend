@@ -1,4 +1,15 @@
-rails g scaffold users firstname:stringlastname:string location:string username:string email:string img_src:string --no-test-framework
+Build a NBA app that lists all teams and allows users to have favorites/like teams and add pictures to profile.
+
+User stories
+Users should be able to...
+
+- look up teams
+- favorites (add teams to favorites)
+- add likes of teams
+- login/logout/signup
+- view other users profile
+
+rails g scaffold users firstname:stringlastname:string location:string username:string email:string password_digest img_src:string --no-test-framework
 
 rails g scaffold teams img_src:string cit:string name:string wins:integer losses:integer likes:integer conference_rank:integer --no-test-framework
 
@@ -36,6 +47,8 @@ Streak: -1
 StreakDescription: "L1"
 TeamID: 7
 Wins: 12
+
+Use json tokens to authenticate
 
 # Parent Container common owner component is
 
