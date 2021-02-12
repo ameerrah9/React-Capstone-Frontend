@@ -1,11 +1,15 @@
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
-import manageUsers from './Reducers/Users.js';
-import manageTeams from './Reducers/Teams.js';
+import manageUsers from './reducers/users.js';
+import currentUser from './reducers/currentUser.js';
+import loginForm from './reducers/loginForm.js';
+import manageTeams from './reducers/teams.js';
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducer = combineReducers({
     users: manageUsers,
+    current_user: currentUser,
+    loginForm,
     teams: manageTeams
 })
 

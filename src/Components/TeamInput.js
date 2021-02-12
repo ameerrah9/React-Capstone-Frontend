@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import searchTeams from "../Actions/searchTeams"
+import searchTeams from "../actions/searchTeams"
 
 export class TeamInput extends Component {
 

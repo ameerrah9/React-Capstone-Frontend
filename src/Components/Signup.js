@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Users } from '../Actions/Users';
+import { Users } from '../actions/users';
 
 export default class Signup extends Component {
     
@@ -59,6 +59,7 @@ export default class Signup extends Component {
         );
     }
 }
+
 const mapDispatchToProps = dispatch => {
     
     return {

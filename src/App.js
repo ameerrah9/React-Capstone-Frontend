@@ -1,16 +1,23 @@
 // import './App.css';
 import React, { Component } from 'react';
-import TeamsContainer from './Containers/TeamsContainer'
+import Login from "./components/Login.js"
+import TeamsContainer from './containers/TeamsContainer'
+import { connect } from "react-redux"
+import { getCurrentUser } from './actions/currentUser.js'
 
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
 
   render() {
     return (
       <div className="App">
-        <h1>Hello World</h1>
+        <Login />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(null, { getCurrentUser })(App);

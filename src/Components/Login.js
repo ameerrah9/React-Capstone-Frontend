@@ -1,56 +1,55 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Users } from '../Actions/Users';
+import { updateLoginForm } from "../actions/loginForm"
+import { login } from '../actions/currentUser.js'
 
-export class Login extends React.Component {
+const Login = ({ loginFormData, updateLoginForm, login }) => {
 
-  state = {
-    input: '',
-}
-
-handleInputChange = event => {
-    this.setState({
-      input: event.target.value
-    });
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    const updatedFormInfo = {
+      ...loginFormData,
+      [name]: value
+    }
+    updateLoginForm(updatedFormInfo)
   }
 
-  handleOnSubmit = event => {
-    event.preventDefault();
-    this.props.Users(this.state);
+  const handleSubmit = event => {
+    event.preventDefault()
+    login(loginFormData)
   }
-
-  render() {
     return (
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
         <div>
-        <input 
+          <input 
             type="text" 
-            value={this.state.input}
-            placeholder="Username"
-            onChange={(event) => this.handleInputChange(event)} />
-        <label htmlFor="username">Username</label>
+            value={loginFormData.username}
+            placeholder="username"
+            name="username"
+            onChange={handleInputChange} />
         </div>
         <div>
         <input 
             type="password" 
-            value={this.state.input}
-            placeholder="Password" />
-        <label htmlFor="password">Password</label>
+            value={loginFormData.password}
+            placeholder="password"
+            name="password"
+            onChange={handleInputChange } />
         </div>
         <input type="submit" value="Login" />
       </form>
-    );
-  }
+  );
 }
-
-const mapDispatchToProps = dispatch => {
+//read only -> from store
+//gives me an argument to this component that looks like this:
+// {
+//   username: 'affk',
+//   password: "1234"
+// }
+const mapStateToProps = state => {
   return {
-    Users: (newUser) => {
-      dispatch(Users(newUser))
-    }
+    loginFormData: state.loginForm
   };
 };
 
-
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, { updateLoginForm, login } )(Login)

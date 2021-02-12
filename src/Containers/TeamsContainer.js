@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom"
 import { connect } from 'react-redux'
-import fetchTeams from "../Actions/fetchTeams"
-import NavBar from "../Components/NavBar"
-import TeamInput from '../Components/TeamInput'
-import Teams from "../Components/Teams"
-import Team from "../Components/Team"
+import fetchTeams from "../actions/fetchTeams"
+import NavBar from "../components/NavBar"
+import TeamInput from '../components/TeamInput'
+import Teams from "../components/Teams"
+import Team from "../components/Team"
 
 class TeamsContainer extends Component {
 
