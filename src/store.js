@@ -8,7 +8,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducer = combineReducers({
     users: manageUsers,
-    current_user: currentUser,
+    currentUser,
     loginForm,
     teams: manageTeams
 })
