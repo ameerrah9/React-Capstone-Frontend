@@ -3,7 +3,7 @@ import { connect } from 'react-dom'
 
 const MyTeams = () => {
     return (
-        <h1></h1>
+        <h1>Favorite Teams</h1>
     )
 }
 
