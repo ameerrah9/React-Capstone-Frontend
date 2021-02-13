@@ -1,11 +1,13 @@
 import React from 'react';
+//import TeamsContainer from './containers/TeamsContainer'
 import { connect } from "react-redux"
 //import {Link} from 'react-router-dom'
 
-const Footer = () => {
+const MainContainer = ( { currentUser }) => {
 
   return (
-      <div className="Footer">
+      <div className="MainContainer">
+        Hello
       </div>
   )
 }
@@ -16,4 +18,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps)(Footer)
+export default connect(mapStateToProps)(MainContainer)

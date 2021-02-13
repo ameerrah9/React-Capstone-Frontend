@@ -1,18 +1,27 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import Login from "./Login"
+import Logout from './Logout.js';
+//import TeamsContainer from './containers/TeamsContainer'
+import { connect } from "react-redux"
+//import {Link} from 'react-router-dom'
 
-const NavBar = (props) => {
+const NavBar = ( { currentUser }) => {
 
   return (
-    <div>
-      <Link to='/teams' style={{paddingRight: '10px'}}>Teams  </Link>
-      <Link to='/login' style={{paddingRight: '10px'}}>Login  </Link>
-      <Link to='/signup' style={{paddingRight: '10px'}}>Signup  </Link>
-      <Link to='/about' style={{paddingRight: '10px'}}>About  </Link>
-      <Link to='/home' style={{paddingRight: '10px'}}>Home  </Link>
-    </div>
-
+      <div className="NavBar">
+        { currentUser ? <div>
+        <strong>Welcome, {currentUser.attributes.firstname} </strong>
+        <img src={currentUser.attributes.img_src} />
+        </div> : "" } 
+        { currentUser ? <Logout /> : <Login /> } 
+      </div>
   )
 }
 
-export default NavBar
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)

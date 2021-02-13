@@ -1,10 +1,10 @@
-// import './App.css';
+// import '../styles/App.css';
 import React from 'react';
-import Login from "./components/Login.js"
-import Logout from './components/Logout.js';
-import TeamsContainer from './containers/TeamsContainer'
 import { connect } from "react-redux"
 import { getCurrentUser } from './actions/currentUser.js'
+import NavBar from './components/NavBar.js';
+import Footer from './components/Footer'
+import MainContainer from './components/MainContainer'
 
 class App extends React.Component {
 
@@ -15,16 +15,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h2>{ this.props.currentUser ? <Logout /> : <Login /> }</h2>
+        <NavBar />
+        <MainContainer />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ currentUser }) => {
-  return {
-    currentUser
-  }
-}
-
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default connect(null, { getCurrentUser })(App);

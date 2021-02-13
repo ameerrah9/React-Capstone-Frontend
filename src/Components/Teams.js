@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import {Route, Link} from 'react-router-dom'
 import { connect } from 'react-redux';
-import Team from "./Team"
+import Team from "./TeamContainer"
   
   const Teams = (props) => {
-  debugger
     return (
       <div>
         {props.teams.map(team =>
