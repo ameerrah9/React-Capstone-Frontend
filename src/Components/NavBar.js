@@ -13,6 +13,8 @@ const NavBar = ( { currentUser }) => {
         <strong>Welcome, {currentUser.attributes.firstname} </strong>
         <img src={currentUser.attributes.img_src} />
         </div> : "" } 
+        <button>Login</button>
+        <button>Signup</button>
         { currentUser ? <Logout /> : <Login /> } 
       </div>
   )

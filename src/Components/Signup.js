@@ -1,71 +1,90 @@
-import React, { Component } from 'react'
+import React from 'react';
 import { connect } from 'react-redux'
-import { Users } from '../actions/users';
+import { updateSignupForm } from "../actions/signupForm"
+import { signup } from '../actions/currentUser.js'
 
-export default class Signup extends Component {
-    
-    state = {
-        input: '',
+const Signup = ({ signupFormData, updateSignupForm, signup }) => {
+
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    const updatedFormInfo = {
+      ...signupFormData,
+      [name]: value
     }
+    updateSignupForm(updatedFormInfo)
+  }
 
-    handleInputChange = event => {
-        this.setState({
-          input: event.target.value
-        });
-      }
-
-      handleOnSubmit = event => {
-        event.preventDefault();
-        this.props.Users(this.state);
-      }
-
-    render() {
-        return (
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
-            <h1>Signup</h1>
-                <div>
-                <input 
-                    type="text" 
-                    value={this.state.input} 
-                    placeholder="First Name"
-                    onChange={(event) => this.handleInputChange(event)} />
-                <label htmlFor="firstname">First Name</label>
-                </div>
-                <div>
-                <input 
-                    type="text" 
-                    value={this.state.input} 
-                    placeholder="Last Name"
-                    onChange={(event) => this.handleInputChange(event)} />
-                <label htmlFor="lastname">Last Name</label>
-                </div>
-                <div>
-                <input 
-                    type="text" 
-                    value={this.state.input}
-                    placeholder="Username"
-                    onChange={(event) => this.handleInputChange(event)} />
-                <label htmlFor="username">Username</label>
-                </div>
-                <div>
-                <input 
-                    type="password" 
-                    value={this.state.input}
-                    placeholder="Password" />
-                <label htmlFor="password">Password</label>
-                </div>
-                <input type="submit" value="Login" />
-            </form>
-        );
-    }
+  const handleSubmit = event => {
+    event.preventDefault()
+    signup(signupFormData)
+  }
+    return (
+      <form onSubmit={handleSubmit}>
+       <div>
+          <input 
+            type="text" 
+            value={signupFormData.firstname}
+            name="firstname"
+            placeholder="firstname"
+            onChange={handleInputChange} />
+        </div>
+        <div>
+          <input 
+            type="text" 
+            value={signupFormData.lastname}
+            name="lastname"
+            placeholder="lastname"
+            onChange={handleInputChange} />
+        </div>
+        <div>
+          <input 
+            type="text" 
+            value={signupFormData.location}
+            name="location"
+            placeholder="location"
+            onChange={handleInputChange} />
+        </div>
+        <div>
+          <input 
+            type="text" 
+            value={signupFormData.username}
+            name="username"
+            placeholder="username"
+            onChange={handleInputChange} />
+        </div>
+        <div>
+          <input 
+            type="text" 
+            value={signupFormData.email}
+            name="email"
+            placeholder="email"
+            onChange={handleInputChange} />
+        </div>
+        <div>
+          <input 
+            type="text" 
+            value={signupFormData.img_src}
+            name="img_src"
+            placeholder="profile photo"
+            onChange={handleInputChange} />
+        </div>
+        <div>
+        <input 
+            type="password" 
+            value={signupFormData.password}
+            name="password"
+            placeholder="password"
+            onChange={handleInputChange } />
+        </div>
+        <input type="submit" value="Signup" />
+      </form>
+  );
 }
 
-const mapDispatchToProps = dispatch => {
-    
-    return {
-        Users: formData => dispatch({ type: 'ADD_USER', payload: formData })
-    };
+const mapStateToProps = state => {
+  return {
+    signupFormData: state.signupForm
   };
-  
-  
-  export default connect(null, mapDispatchToProps)(Signup);
+};
+
+export default connect(mapStateToProps, { updateSignupForm, signup } )(Signup)

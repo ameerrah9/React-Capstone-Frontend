@@ -1,4 +1,6 @@
 import { resetLoginForm } from './loginForm'
+import { resetSignupForm } from './signupForm'
+import { getMyTeams } from "./myTeams"
 
 // synchronous action creators
 export const setCurrentUser = user => {
@@ -32,7 +34,34 @@ export const login = credentials => {
                     alert(response.error)
                 } else {
                     dispatch(setCurrentUser(response.data))
+                    //dispatch(getMyTeams())
                     dispatch(resetLoginForm())
+                }
+            })
+            .catch(console.log)
+    }
+}   
+
+export const signup = credentials => {
+    return dispatch => {
+        const userInfo = {
+            user: credentials
+        }
+        return fetch('http://localhost:3001/api/v1/signup', {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"  
+            },
+            body: JSON.stringify(userInfo)
+        })
+            .then(resp => resp.json())
+            .then(response => {
+                if (response.error) {
+                    alert(response.error)
+                } else {
+                    dispatch(setCurrentUser(response.data))
+                    dispatch(resetSignupForm())
                 }
             })
             .catch(console.log)
@@ -64,6 +93,7 @@ export const getCurrentUser = () => {
                     alert(response.error)
                 } else {
                     dispatch(setCurrentUser(response.data))
+                    dispatch(getMyTeams())
                 }
             })
             .catch(console.log)
