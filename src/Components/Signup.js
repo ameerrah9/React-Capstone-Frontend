@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { updateSignupForm } from "../actions/signupForm"
 import { signup } from '../actions/currentUser.js'
+import { Form, Button, InputGroup } from 'react-bootstrap'
 
 const Signup = ({ signupFormData, updateSignupForm, signup }) => {
 
@@ -19,8 +20,8 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
     signup(signupFormData)
   }
     return (
-      <form onSubmit={handleSubmit}>
-       <div>
+      <Form inline onSubmit={handleSubmit}>
+      <div>
           <input 
             type="text" 
             value={signupFormData.firstname}
@@ -77,7 +78,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
             onChange={handleInputChange } />
         </div>
         <input type="submit" value="Signup" />
-      </form>
+      </Form>
   );
 }
 

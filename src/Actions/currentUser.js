@@ -38,7 +38,7 @@ export const login = credentials => {
                     dispatch(resetLoginForm())
                 }
             })
-            .catch(console.log)
+            .catch(err => console.log(err))
     }
 }   
 
