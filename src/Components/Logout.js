@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { logout } from '../actions/currentUser.js'
+import { logout } from '../actions/users'
+import { Form, Button, InputGroup } from 'react-bootstrap'
 
 const Logout = ({ logout }) => {
 
     return (
-      <form onSubmit={logout}>
+      <Form inline onSubmit={logout}>
         <input type="submit" value="Logout" />
-      </form>
+      </Form>
   );
 }
 
