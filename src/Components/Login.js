@@ -7,7 +7,7 @@ class Login extends React.Component {
 
   state = {
     username: '',
-    password: ''
+    password: '',
   }
 
   handleSubmit = (event) => {

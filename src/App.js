@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-        <Login />
+        <Home />
           <NavBar />
           <MainContainer />
           <Switch>

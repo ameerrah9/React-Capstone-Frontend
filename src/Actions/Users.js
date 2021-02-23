@@ -1,5 +1,8 @@
+import { setTeams } from "./teams"
+
 // synchronous action creators
 export const setCurrentUser = user => {
+    debugger
     return {
         type: "SET_CURRENT_USER",
         user
@@ -17,39 +20,37 @@ export const clearCurrentUser = () => {
 export const login = credentials => {
     return dispatch => {
         return fetch('http://localhost:3001/api/v1/login', {
-            credentials: "include",
-            method: "POST",
             headers: {
-                "Content-Type": "application/json"  
+                "Content-Type": "application/json",
+                "Accept": 'application/json'
             },
+            method: "POST",
             body: JSON.stringify(credentials)
         })
             .then(resp => resp.json())
             .then(response => {
-                if (response.error) {
-                    alert(response.error)
-                } else {
-                    dispatch(setCurrentUser(response.data))
-                    //dispatch(getMyTeams())
-                    dispatch(resetLoginForm())
+                console.log(response)
+              if (response.error) {
+                alert(response.error)
+              } else {
+                dispatch(setCurrentUser(response.data))
+                //dispatch(fetchTeams(response.data))
                 }
             })
             .catch(err => console.log(err))
     }
 }   
 
-export const signup = credentials => {
+export const signup = (credentials) => {
+    console.log(credentials)
     return dispatch => {
-        const userInfo = {
-            user: credentials
-        }
         return fetch('http://localhost:3001/api/v1/signup', {
-            credentials: "include",
-            method: "POST",
             headers: {
-                "Content-Type": "application/json"  
+                "Content-Type": "application/json",
+                "Accept": 'application/json'
             },
-            body: JSON.stringify(userInfo)
+            method: "POST",
+            body: JSON.stringify({user: credentials})
         })
             .then(resp => resp.json())
             .then(response => {
@@ -58,6 +59,7 @@ export const signup = credentials => {
                 } else {
                     dispatch(setCurrentUser(response.data))
                     dispatch(resetSignupForm())
+                    //dispatch(setTeams())
                 }
             })
             .catch(console.log)
@@ -68,24 +70,29 @@ export const logout = () => {
     return dispatch => {
         dispatch(clearCurrentUser())
         return fetch('http://localhost:3001/api/v1/logout', {
-            credentials: "include",
             method: "DELETE"
         })
         .then(resp => resp.json())
-        .then(res => {
-            
+        .then(response => {
+          if (response.error) {
+            alert(response.error)
+          } else {
+            dispatch(clearCurrentUser(response.data))
+          }
         })
+        .catch(err => console.log(err))
     }
 }
 
 export const getCurrentUser = () => {
     return dispatch => {
         return fetch('http://localhost:3001/api/v1/get_current_user', {
-            credentials: "include",
-            method: "GET",
             headers: {
-                "Content-Type": "application/json"  
+                "Content-Type": "application/json",
+                "Accept": 'application/json'
             },
+            method: "GET",
+            body: JSON.stringify()
         })
             .then(resp => resp.json())
             .then(response => {
