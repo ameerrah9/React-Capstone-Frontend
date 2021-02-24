@@ -1,8 +1,7 @@
-import { setTeams } from "./teams"
-
+import { fetchTeams } from "./teams"
+import { fetchFavorites } from "./teams"
 // synchronous action creators
-export const setCurrentUser = user => {
-    debugger
+export const setCurrentUser = user => { 
     return {
         type: "SET_CURRENT_USER",
         user
@@ -29,13 +28,13 @@ export const login = credentials => {
         })
             .then(resp => resp.json())
             .then(response => {
-                console.log(response)
               if (response.error) {
                 alert(response.error)
               } else {
                 dispatch(setCurrentUser(response.data))
-                //dispatch(fetchTeams(response.data))
-                }
+                dispatch(fetchFavorites(response.data))
+                dispatch(resetLoginForm())    
+            }
             })
             .catch(err => console.log(err))
     }
@@ -58,9 +57,9 @@ export const signup = (credentials) => {
                     alert(response.error)
                 } else {
                     dispatch(setCurrentUser(response.data))
+                    dispatch(fetchTeams(response.data))
                     dispatch(resetSignupForm())
-                    //dispatch(setTeams())
-                }
+            }
             })
             .catch(console.log)
     }
@@ -99,6 +98,7 @@ export const getCurrentUser = () => {
                 if (response.error) {
                     alert(response.error)
                 } else {
+                    console.log(response)
                     dispatch(setCurrentUser(response.data))
                 }
             })

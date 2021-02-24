@@ -1,7 +1,11 @@
-export default function (state = [], action){
+// const initialState = {
+//   currentUser: [],
+//   favorites: [],
+// }
+
+export default function (state = null, action){
   switch (action.type) {
     case "SET_CURRENT_USER":
-        debugger
         return action.user
       case "CLEAR_CURRENT_USER":
         return null 

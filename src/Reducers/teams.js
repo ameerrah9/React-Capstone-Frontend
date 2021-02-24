@@ -1,9 +1,4 @@
-const initialState = {
-  teams: [],
-  favorites: [],
-}
-
-export default (state = initialState, action) => {
+export default (state = null, action) => {
   switch(action.type) {
       case "SET_TEAMS":
           return action.teams
@@ -11,8 +6,10 @@ export default (state = initialState, action) => {
           return
       case "SEARCH_TEAMS":
           return 
-      case "FETCH_FAVORITES":
+      case "SET_FAVORITES":
         return action.favorites
+      case "FETCH_FAVORITES":
+        return
       case "ADD_FAVORITE":
         return state.concat(action.favorite)
       case "REMOVE_FAVORITE":

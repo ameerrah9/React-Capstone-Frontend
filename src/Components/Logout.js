@@ -1,15 +1,20 @@
-import React from 'react';
+import { Form, Button, InputGroup } from 'react-bootstrap'
+import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../actions/users'
-import { Form, Button, InputGroup } from 'react-bootstrap'
+import { withRouter } from 'react-router-dom'
 
-const Logout = ({ logout }) => {
-
-    return (
-      <Form inline onSubmit={logout}>
-        <input type="submit" value="Logout" />
-      </Form>
-  );
+const Logout = ({ logout, history }) => {
+  return (
+    <form onSubmit={(event) => {
+        event.preventDefault()
+        logout()
+        history.push('/')
+      }
+    }>
+      <input type="submit" value="Log Out"/>
+    </form>
+  )
 }
 
-export default connect(null, { logout } )(Logout)
+export default withRouter(connect(null, { logout } )(Logout))

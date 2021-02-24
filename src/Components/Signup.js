@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { signup } from '../actions/users'
+import { signup, updateSignupForm } from '../actions/users'
 import { Form, Button, InputGroup } from 'react-bootstrap'
 
 class Signup extends React.Component {
@@ -29,11 +29,12 @@ class Signup extends React.Component {
       password: '',
     })
   }
-
+  
   handleInputChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     })
+    updateSignupForm(this.state)
   }
 
   render() {

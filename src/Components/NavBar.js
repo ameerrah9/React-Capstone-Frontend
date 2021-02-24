@@ -4,18 +4,22 @@ import { connect } from "react-redux"
 import { NavLink } from 'react-router-dom'
 import Login from './Login.js';
 
-const NavBar = ( { currentUser, loggedIn }) => {
+const NavBar = ({ users }) => {
 
-  return (  
-      <div className="NavBar">
-        <NavLink activeClassName to='/teams'>All Teams</NavLink>
-        <NavLink activeClassName to='/favorites'>Favorites</NavLink>
-        <NavLink activeClassName to='/about'>About</NavLink>
-        <NavLink activeClassName to='/home'>Home</NavLink>
-
-        <Logout />
-      </div>
+  return ( 
+    <div className="NavBar">
+      { users ? 
+      <div><img className="profile-photo" src={users.attributes.img_src} width={75} height={75}/><p>Welcome, {users.attributes.firstname}</p></div> : 
+      "" }
+      { users !== null ? <Logout /> : <Login /> }
+    </div>
   )
 }
 
-export default NavBar
+const mapStateToProps = ({ users }) => {
+  return {
+    users
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { login } from '../actions/users'
+import { login, updateLoginForm } from '../actions/users'
 import { Form, Button, InputGroup } from 'react-bootstrap'
 
 class Login extends React.Component {
@@ -23,6 +23,7 @@ class Login extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+    updateLoginForm(this.state)
   }
 
   render() {
