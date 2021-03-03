@@ -5,8 +5,8 @@ import { getCurrentUser } from './actions/users'
 import { setTeams } from './actions/teams'
 import NavBar from './components/NavBar.js';
 import Footer from './components/Footer'
-import TeamsContainer from './components/TeamContainer'
-import FavoritesContainer from './components/FavoriteContainer'
+import TeamContainer from './components/TeamContainer'
+import FavoriteContainer from './components/FavoriteContainer'
 import Signup from './components/Signup.js';
 import About from './components/About'
 import Login from './components/Login.js';
@@ -19,7 +19,7 @@ import './App.css'
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.getCurrentUser() 
+    // this.props.getCurrentUser()
   }
 
   render() {
@@ -30,8 +30,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
           <Route exact path='/login' component={Login}/>
-          <Route exact path='/teams' component={TeamsContainer}/>
-          <Route exact path='/favorites' component={FavoritesContainer}/>
+          <Route exact path='/teams' component={TeamContainer}/>
+          <Route exact path='/favorites' component={FavoriteContainer}/>
           <Route exact path='/about' component={About}/>
         </Switch>
       </div>

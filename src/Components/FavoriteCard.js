@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const FavoriteCard = ({ favorites }) => {
-  debugger
     const logo = favorites.attributes.team.logo_url
   return (
       favorites ?
