@@ -1,54 +1,52 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import { login, updateLoginForm } from '../actions/users'
 import { Form, Button, InputGroup } from 'react-bootstrap'
+import React from 'react'
+import { connect } from 'react-redux'
+import { updateLoginForm } from "../actions/loginForm.js"
+import { login } from "../actions/currentUser.js"
 
-class Login extends React.Component {
+const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
-  state = {
-    username: '',
-    password: '',
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    const updatedFormInfo = {
+      ...loginFormData,
+      [name]: value
+    }
+    updateLoginForm(updatedFormInfo)
   }
 
-  handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault()
-    this.props.login(this.state)
-    this.setState({
-      username: '',
-      password: ''
-    })
+    login(loginFormData, history)
   }
-
-  handleInputChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-    updateLoginForm(this.state)
-  }
-
-  render() {
+  
     return (
-      <Form inline onSubmit={this.handleSubmit}>
+      <Form inline onSubmit={handleSubmit}>
         <div>
           <input 
             type="text" 
-            value={this.state.username}
+            value={loginFormData.username}
             placeholder="username"
             name="username"
-            onChange={this.handleInputChange} />
+            onChange={handleInputChange} />
         </div>
         <div>
         <input 
             type="password" 
-            value={this.state.password}
+            value={loginFormData.password} 
             placeholder="password"
             name="password"
-            onChange={this.handleInputChange} />
+            onChange={handleInputChange} />
         </div>
         <input type="submit" value="Login" />
       </Form>
   );
+}
+
+const mapStateToProps = state => {
+  return {
+    loginFormData: state.loginForm
   }
 }
 
-export default connect(null, { login } )(Login)
+export default connect(mapStateToProps, { updateLoginForm, login } )(Login)

@@ -1,105 +1,92 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import { signup, updateSignupForm } from '../actions/users'
 import { Form, Button, InputGroup } from 'react-bootstrap'
+import React from 'react'
+import { connect } from 'react-redux'
+import { updateSignupForm } from "../actions/signupForm.js"
+import { signup } from "../actions/currentUser.js"
 
-class Signup extends React.Component {
+const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
-  state = {
-    firstname: '',
-    lastname: '',
-    location: '',
-    username: '',
-    email: '',
-    img_src: '',
-    password: '',
-
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    const updatedFormInfo = {
+      ...signupFormData,
+      [name]: value
+    }
+    updateSignupForm(updatedFormInfo)
   }
 
-  handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault()
-    this.props.signup(this.state)
-    this.setState({
-      firstname: '',
-      lastname: '',
-      location: '',
-      username: '',
-      email: '',
-      img_src: '',
-      password: '',
-    })
-  }
-  
-  handleInputChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-    updateSignupForm(this.state)
+    signup(signupFormData, history)
   }
 
-  render() {
-    return (
-      <Form inline onSubmit={this.handleSubmit}>
+  return (
+      <Form inline onSubmit={ handleSubmit}>
       <div>
           <input 
             type="text" 
-            value={this.state.firstname}
+            value={ signupFormData.firstname}
             name="firstname"
             placeholder="firstname"
-            onChange={this.handleInputChange} />
+            onChange={ handleInputChange} />
         </div>
         <div>
           <input 
             type="text" 
-            value={this.state.lastname}
+            value={ signupFormData.lastname}
             name="lastname"
             placeholder="lastname"
-            onChange={this.handleInputChange} />
+            onChange={ handleInputChange} />
         </div>
         <div>
           <input 
             type="text" 
-            value={this.state.location}
+            value={ signupFormData.location}
             name="location"
             placeholder="location"
-            onChange={this.handleInputChange} />
+            onChange={ handleInputChange} />
         </div>
         <div>
           <input 
             type="text" 
-            value={this.state.username}
+            value={ signupFormData.username}
             name="username"
             placeholder="username"
-            onChange={this.handleInputChange} />
+            onChange={ handleInputChange} />
         </div>
         <div>
           <input 
             type="text" 
-            value={this.state.email}
+            value={ signupFormData.email}
             name="email"
             placeholder="email"
-            onChange={this.handleInputChange} />
+            onChange={ handleInputChange} />
         </div>
         <div>
           <input 
             type="text" 
-            value={this.state.img_src}
+            value={ signupFormData.img_src}
             name="img_src"
             placeholder="profile photo"
-            onChange={this.handleInputChange} />
+            onChange={ handleInputChange} />
         </div>
         <div>
         <input 
             type="password" 
-            value={this.state.password}
+            value={ signupFormData.password}
             name="password"
             placeholder="password"
-            onChange={this.handleInputChange } />
+            onChange={ handleInputChange } />
         </div>
         <input type="submit" value="Signup" />
       </Form>
   );
-  }
-} 
+}
 
-export default connect(null, { signup } )(Signup)
+const mapStateToProps = state => {
+  return {
+    signupFormData: state.signupForm
+  }
+}
+
+export default connect(mapStateToProps, { updateSignupForm, signup } )(Signup)

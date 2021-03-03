@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    padding: 25px;
   }
   
   .App-logo {
@@ -48,4 +49,8 @@
 .logo {
     height: 50px;
   width: 50px;
+}
+
+.MainContainer {
+  text-align: center;
 }

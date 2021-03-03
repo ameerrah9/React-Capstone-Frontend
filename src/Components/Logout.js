@@ -1,7 +1,6 @@
-import { Form, Button, InputGroup } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
-import { logout } from '../actions/users'
+import { logout } from "../actions/currentUser.js"
 import { withRouter } from 'react-router-dom'
 
 const Logout = ({ logout, history }) => {
