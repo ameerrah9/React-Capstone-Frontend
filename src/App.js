@@ -1,7 +1,7 @@
 // import '../styles/App.css';
 import React from 'react';
 import { connect } from 'react-redux'
-import { getCurrentUser } from './actions/users'
+import { getCurrentUser } from './actions/currentUser'
 import { setTeams } from './actions/teams'
 import NavBar from './components/NavBar.js';
 import Footer from './components/Footer'
@@ -19,7 +19,7 @@ import './App.css'
 class App extends React.Component {
 
   componentDidMount() {
-    // this.props.getCurrentUser()
+    this.props.getCurrentUser()
   }
 
   render() {
