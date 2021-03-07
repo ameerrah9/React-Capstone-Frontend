@@ -6,9 +6,9 @@ import Logout from './Logout'
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="NavBar">
-      <NavLink exact activeClassName="active" to="/favorites">My Favorites</NavLink>
       <NavLink exact activeClassName="active" to="/teams" >All Teams</NavLink>
       <NavLink exact activeClassName="active" to="/about" >About</NavLink>
+      <NavLink exact activeClassName="active" to="/favorites">My Favorites</NavLink>
 
       { loggedIn ? 
       <>

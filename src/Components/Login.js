@@ -1,4 +1,4 @@
-import { Form, Button, InputGroup } from 'react-bootstrap'
+import { Form, Button, FormGroup } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from "../actions/loginForm.js"
@@ -23,22 +23,29 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     return (
       <Form inline onSubmit={handleSubmit}>
         <div>
-          <input 
-            type="text" 
-            value={loginFormData.username}
-            placeholder="username"
-            name="username"
-            onChange={handleInputChange} />
+        <Form.Group controlId="formBasicEmail">
+            <Form.Control 
+              type="text" 
+              value={loginFormData.username}
+              placeholder="username"
+              name="username"
+              onChange={handleInputChange} />
+  </Form.Group>
         </div>
+        <br></br>
         <div>
-        <input 
-            type="password" 
-            value={loginFormData.password} 
-            placeholder="password"
-            name="password"
-            onChange={handleInputChange} />
+  <Form.Group controlId="formBasicPassword">
+            <Form.Control 
+              type="password" 
+              value={loginFormData.password} 
+              placeholder="password"
+              name="password"
+              onChange={handleInputChange} />
+  </Form.Group>
         </div>
-        <input type="submit" value="Login" />
+        <br></br>
+
+          <Button variant="primary" value="Login" type="submit">Login</Button>
       </Form>
   );
 }

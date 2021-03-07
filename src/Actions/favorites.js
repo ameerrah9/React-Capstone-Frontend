@@ -57,7 +57,7 @@ export const createFavorite = (favoriteData, history) => {
         user_id: favoriteData.userId
       }
 
-      return fetch(`http://localhost:3001/api/v1/users/${favoriteData.userId}/favorites`, {
+      return fetch(`http://localhost:3001/api/v1/favorites`, {
         credentials: "include",
         method: "POST",
         headers: {

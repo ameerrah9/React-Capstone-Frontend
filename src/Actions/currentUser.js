@@ -1,7 +1,7 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
 import { fetchFavorites, clearFavorites } from "./favorites.js"
-import { fetchTeams } from "./teams"
+import { fetchTeams, clearTeams } from "./teams"
 
 // synchronous action creators
 export const setCurrentUser = user => {
@@ -76,6 +76,7 @@ export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
     dispatch(clearFavorites())
+    dispatch(clearTeams())
     return fetch('http://localhost:3001/api/v1/logout', {
       credentials: "include",
       method: "DELETE"

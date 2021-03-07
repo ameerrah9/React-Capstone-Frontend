@@ -1,19 +1,30 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import deleteFavorite from '../actions/favorites'
 
-const FavoriteCard = ({ favorites }) => {
-    const logo = favorites.attributes.team.logo_url
+const Favorite = ({props}) => {
+
+  const handleClick = event => {
+    event.preventDefault()
+    console.log("In button click event")
+    // deleteFavorite()
+  }
+
   return (
-      favorites ?
+      props ?
       <div>
-      <h3>Ranking: {favorites.attributes.team.conference_rank}</h3>
-      <img className="logo" src={logo} width={50} height={30}/>
-        <h3>{favorites.attributes.team.name} ({favorites.attributes.team.wins} - {favorites.attributes.team.losses})</h3>
-        <button>Remove Favorite</button>
-        {/* <Link to={`/favorite/${team.id}/edit`}>Edit this team</Link> */}
+        <div key={props.attributes.team.id}>
+        <br></br>
+          <h3>Ranking: {props.attributes.team.conference_rank}</h3>
+          <img className="logo" src={props.attributes.team.logo_url} width={50} height={30}/>
+          <h4>{props.attributes.team.name} ({props.attributes.team.wins} - {props.attributes.team.losses})</h4>
+          <button onClick={handleClick}>Remove Favorite</button>
+        <br></br>
+        </div>
+        <br></br>
       </div> :
-      <p>This the the team card with no favorites!</p>
+      <p>This the the team card with no teams!</p>
   )
 }
 
-export default FavoriteCard
+export default Favorite

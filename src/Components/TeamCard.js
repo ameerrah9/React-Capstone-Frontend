@@ -1,18 +1,28 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const TeamCard = ({ teams }) => {
-    const logo = teams.attributes.team.logo_url
-  return (
-      teams ?
+const Team = ({props, action}) => {
+
+  const handleClick = event => {
+    event.preventDefault()
+    console.log("In button click event")
+    // action.addFavorite()
+  }
+
+    return (
+      props ?
       <div>
-      <h3>{teams.attributes.team.conference_rank}</h3>
-      <img className="logo" src={logo} width={50} height={30}/>
-        <h3>{teams.attributes.team.name} ({teams.attributes.team.wins} - {teams.attributes.team.losses})</h3>
-        {/* <Link to={`/teams/${team.id}/edit`}>Edit this team</Link> */}
+        <div key={props.attributes.id}>
+        <br></br>
+          <h3>Ranking: {props.attributes.conference_rank}</h3>
+          <img className="logo" src={props.attributes.logo_url} width={50} height={30}/>
+          <h4>{props.attributes.name} ({props.attributes.wins} - {props.attributes.losses})</h4>
+        <br></br>
+        </div>
+        <br></br>
       </div> :
-      <p>This the the team card with no team!</p>
+      <p>This the the team card with no favorites!</p>
   )
 }
 
-export default TeamCard
+export default Team

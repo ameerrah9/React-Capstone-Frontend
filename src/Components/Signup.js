@@ -1,4 +1,4 @@
-import { Form, Button, InputGroup } from 'react-bootstrap'
+import { Form, Button, FormGroup } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateSignupForm } from "../actions/signupForm.js"
@@ -22,63 +22,69 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
   return (
       <Form inline onSubmit={ handleSubmit}>
-      <div>
-          <input 
+        <Form.Group>
+          <Form.Control 
             type="text" 
             value={ signupFormData.firstname}
             name="firstname"
             placeholder="firstname"
             onChange={ handleInputChange} />
-        </div>
-        <div>
-          <input 
+  </Form.Group>
+            <Form.Group>
+          <Form.Control  
             type="text" 
             value={ signupFormData.lastname}
             name="lastname"
             placeholder="lastname"
             onChange={ handleInputChange} />
-        </div>
-        <div>
-          <input 
+    </Form.Group>
+
+              <Form.Group>
+          <Form.Control  
             type="text" 
             value={ signupFormData.location}
             name="location"
             placeholder="location"
             onChange={ handleInputChange} />
-        </div>
-        <div>
-          <input 
-            type="text" 
-            value={ signupFormData.username}
-            name="username"
-            placeholder="username"
-            onChange={ handleInputChange} />
-        </div>
-        <div>
-          <input 
-            type="text" 
-            value={ signupFormData.email}
-            name="email"
-            placeholder="email"
-            onChange={ handleInputChange} />
-        </div>
-        <div>
-          <input 
-            type="text" 
-            value={ signupFormData.img_src}
-            name="img_src"
-            placeholder="profile photo"
-            onChange={ handleInputChange} />
-        </div>
-        <div>
-        <input 
+    </Form.Group>
+
+    <Form.Group controlId="formBasicUsername">
+            <Form.Control  
+              type="text" 
+              value={ signupFormData.username}
+              name="username"
+              placeholder="username"
+              onChange={ handleInputChange} />
+    </Form.Group>
+
+    <Form.Group controlId="formBasicEmail">
+            <Form.Control  
+              type="text" 
+              value={ signupFormData.email}
+              name="email"
+              placeholder="email"
+              onChange={ handleInputChange} />
+    </Form.Group>
+
+              <Form.Group>
+            <Form.Control  
+              type="text" 
+              value={ signupFormData.img_src}
+              name="img_src"
+              placeholder="profile photo"
+              onChange={ handleInputChange} />
+    </Form.Group>
+
+    <Form.Group controlId="formBasicPassword">
+          <Form.Control  
             type="password" 
             value={ signupFormData.password}
             name="password"
             placeholder="password"
             onChange={ handleInputChange } />
-        </div>
-        <input type="submit" value="Signup" />
+  </Form.Group>
+
+          <Button variant="primary" value="Signup" type="submit">Signup</Button>
       </Form>
   );
 }

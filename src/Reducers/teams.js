@@ -5,6 +5,10 @@ export default (state = initialState, action) => {
       case "SET_TEAMS":
           return action.teams
       case "FETCH_TEAMS":
+        return {
+            ...state,
+            teams: action.teams
+          }
           return
       case "SEARCH_TEAMS":
           return 

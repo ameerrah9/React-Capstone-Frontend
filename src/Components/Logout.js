@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from "../actions/currentUser.js"
 import { withRouter } from 'react-router-dom'
+import { Form, Button, InputGroup } from 'react-bootstrap'
 
 const Logout = ({ logout, history }) => {
   return (
@@ -11,7 +12,8 @@ const Logout = ({ logout, history }) => {
         history.push('/')
       }
     }>
-      <input type="submit" value="Log Out"/>
+      <Button variant="primary" value="Log Out" type="submit">Logout</Button>
+
     </form>
   )
 }
