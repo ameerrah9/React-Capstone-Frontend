@@ -49,32 +49,31 @@ export const fetchFavorites = () => {
   }
 }
 
+// export const createFavorite = (team_id, history) => {
 
-export const createFavorite = (favoriteData, history) => {
-    return dispatch => {
-      const sendableFavoriteData = {
-        team_id: favoriteData.team_id,
-        user_id: favoriteData.userId
-      }
-
+export const createFavorite = (team_id, user_id) => {
+  console.log("hello")
+  return dispatch => {
       return fetch(`http://localhost:3001/api/v1/favorites`, {
         credentials: "include",
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(sendableFavoriteData)
+        body: JSON.stringify({
+          team_id: team_id,
+          user_id: user_id
+        })
       })
         .then(r => r.json())
         .then(resp => {
+          console.log(resp)
           if (resp.error) {
             alert(resp.error)
           } else {
             dispatch(addFavorite(resp.data))
-            dispatch(resetFavoriteForm())
-            history.push(`/favorites/${resp.data.id}`)
-            // go somewhere else --> trip show?
-            // add the new trip to the store
+            // dispatch(resetFavoriteForm())
+            // history.push(`/favorites/${resp.data.id}`)
           }
         })
         .catch(console.log)
@@ -105,3 +104,5 @@ export const deleteFavorite = (favoriteId, history) => {
     }
   
   }
+
+export default fetchFavorites

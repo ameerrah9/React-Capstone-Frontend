@@ -7,7 +7,7 @@ const Favorite = ({props}) => {
   const handleClick = event => {
     event.preventDefault()
     console.log("In button click event")
-    // deleteFavorite()
+    deleteFavorite()
   }
 
   return (

@@ -1,12 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { createFavorite } from '../actions/favorites'
 
-const Team = ({props, action}) => {
+
+const Team = ({ props, currentUser }) => {
+
 
   const handleClick = event => {
     event.preventDefault()
-    console.log("In button click event")
-    // action.addFavorite()
+    createFavorite(props.id, currentUser.id)
   }
 
     return (
@@ -17,6 +19,8 @@ const Team = ({props, action}) => {
           <h3>Ranking: {props.attributes.conference_rank}</h3>
           <img className="logo" src={props.attributes.logo_url} width={50} height={30}/>
           <h4>{props.attributes.name} ({props.attributes.wins} - {props.attributes.losses})</h4>
+          <button onClick={handleClick}>Add to Favorites</button>
+
         <br></br>
         </div>
         <br></br>
