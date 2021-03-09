@@ -7,7 +7,7 @@ Keep track of your favorite NBA teams. GameZone helps NBA fans get up-to-date in
 - Allows for user authentication and authorizes users with sessions
 - Users can add and edit favorite teams
 
-# Installation
+## Installation
 
 1.  Create empty directory and cd into project directory
     ```bash
@@ -28,7 +28,7 @@ Keep track of your favorite NBA teams. GameZone helps NBA fans get up-to-date in
     git clone git@github.com:ameerrah9/React-Capstone-Frontend.git
     ```
 
-# Getting Started
+## Getting Started
 
 1. Install all dependencies
    ```bash
@@ -39,7 +39,7 @@ Keep track of your favorite NBA teams. GameZone helps NBA fans get up-to-date in
    npm start
    ```
 
-# Built With
+## Built With
 
 - React.js
 - Redux
@@ -48,4 +48,7 @@ Keep track of your favorite NBA teams. GameZone helps NBA fans get up-to-date in
 - React Router
 - Styled component
 
-# Related projects
+### Related projects
+
+- [Travelgram app](https://github.com/ameerrah9/Travelgram) - Travelers can blog about their trips.
+- [Fresh Find app](https://github.com/ameerrah9/Fresh-Find-Frontend) - Farmer's market merchants can keep their products organized.
