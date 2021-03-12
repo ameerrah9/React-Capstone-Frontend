@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
         }
       case "ADD_FAVORITE":
         return state.concat(action.favorite)
-      case "REMOVE_FAVORITE":
+      case "DELETE_FAVORITE":
         return state.filter(favorite => favorite.id === action.favoriteId ? false : true)
       default:
         return state

@@ -1,13 +1,25 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import deleteFavorite from '../actions/favorites'
+import { Link } from 'react-router-dom'
+import { deleteFavorite } from '../actions/favorites'
+import { connect } from 'react-redux'
+import {
+  Grid,
+  Container,
+  Input,
+  InputLabel,
+  InputAdornment,
+  FormControlLabel,
+  Checkbox,
+  Card,
+  CardContent,
+  Button,
+  FormControl
+} from '@material-ui/core';
 
-const Favorite = ({props}) => {
-
+const Favorite = ({ props, deleteFavorite }) => {
   const handleClick = event => {
     event.preventDefault()
-    console.log("In button click event")
-    deleteFavorite()
+    deleteFavorite(props.id)
   }
 
   return (
@@ -27,4 +39,4 @@ const Favorite = ({props}) => {
   )
 }
 
-export default Favorite
+export default connect(null, { deleteFavorite })(Favorite)

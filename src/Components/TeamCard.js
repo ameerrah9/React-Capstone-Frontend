@@ -1,11 +1,24 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { createFavorite } from '../actions/favorites'
+import { connect } from 'react-redux'
+import {
+  Grid,
+  Container,
+  Input,
+  InputLabel,
+  InputAdornment,
+  FormControlLabel,
+  Checkbox,
+  Card,
+  CardContent,
+  Button,
+  FormControl
+} from '@material-ui/core';
 
+const Team = ({ props, createFavorite, currentUser }) => {
 
-const Team = ({ props, currentUser }) => {
-
-
+// debugger
   const handleClick = event => {
     event.preventDefault()
     createFavorite(props.id, currentUser.id)
@@ -29,4 +42,5 @@ const Team = ({ props, currentUser }) => {
   )
 }
 
-export default Team
+
+export default connect(null, { createFavorite })(Team)

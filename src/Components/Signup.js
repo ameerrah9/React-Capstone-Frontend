@@ -3,6 +3,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateSignupForm } from "../actions/signupForm.js"
 import { signup } from "../actions/currentUser.js"
+import {
+  Grid,
+  Container,
+  Input,
+  InputLabel,
+  InputAdornment,
+  FormControlLabel,
+  Checkbox,
+  Card,
+  CardContent,
+  Button,
+  FormControl
+} from '@material-ui/core';
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 

@@ -16,6 +16,19 @@ import MainContainer from './components/MainContainer'
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  Grid,
+  Container,
+  Input,
+  InputLabel,
+  InputAdornment,
+  FormControlLabel,
+  Checkbox,
+  Card,
+  CardContent,
+  Button,
+  FormControl
+} from '@material-ui/core';
 
 
 class App extends React.Component {
