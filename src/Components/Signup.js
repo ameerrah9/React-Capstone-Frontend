@@ -1,4 +1,3 @@
-import { Form, Button, FormGroup } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateSignupForm } from "../actions/signupForm.js"
@@ -7,6 +6,7 @@ import {
   Grid,
   Container,
   Input,
+  TextField,
   InputLabel,
   InputAdornment,
   FormControlLabel,
@@ -34,71 +34,75 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-      <Form inline onSubmit={ handleSubmit}>
-        <Form.Group>
-          <Form.Control 
+    <>
+      <br></br>
+      <form inline onSubmit={ handleSubmit}>
+          <TextField
+            variant="filled"
             type="text" 
             value={ signupFormData.firstname}
             name="firstname"
             placeholder="firstname"
             onChange={ handleInputChange} />
-  </Form.Group>
-            <Form.Group>
-          <Form.Control  
+            <br></br>
+
+          <TextField
+            variant="filled" 
             type="text" 
             value={ signupFormData.lastname}
             name="lastname"
             placeholder="lastname"
             onChange={ handleInputChange} />
-    </Form.Group>
+        <br></br>
 
-              <Form.Group>
-          <Form.Control  
+          <TextField
+            variant="filled" 
             type="text" 
             value={ signupFormData.location}
             name="location"
             placeholder="location"
             onChange={ handleInputChange} />
-    </Form.Group>
+        <br></br>
 
-    <Form.Group controlId="formBasicUsername">
-            <Form.Control  
+            <TextField
+              variant="filled" 
               type="text" 
               value={ signupFormData.username}
               name="username"
               placeholder="username"
               onChange={ handleInputChange} />
-    </Form.Group>
+        <br></br>
 
-    <Form.Group controlId="formBasicEmail">
-            <Form.Control  
+            <TextField
+              variant="filled" 
               type="text" 
               value={ signupFormData.email}
               name="email"
               placeholder="email"
               onChange={ handleInputChange} />
-    </Form.Group>
+        <br></br>
 
-              <Form.Group>
-            <Form.Control  
+            <TextField
+              variant="filled" 
               type="text" 
               value={ signupFormData.img_src}
               name="img_src"
               placeholder="profile photo"
               onChange={ handleInputChange} />
-    </Form.Group>
+        <br></br>
 
-    <Form.Group controlId="formBasicPassword">
-          <Form.Control  
+          <TextField
+            variant="filled" 
             type="password" 
             value={ signupFormData.password}
             name="password"
             placeholder="password"
             onChange={ handleInputChange } />
-  </Form.Group>
+        <br></br>
 
           <Button variant="primary" value="Signup" type="submit">Signup</Button>
-      </Form>
+      </form>
+      </>
   );
 }
 

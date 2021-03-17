@@ -3,9 +3,18 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Team from './TeamCard'
 
+const teamIteration = (props) => {
+    return props.teams.map(team => <div key={team.id}><Team props={team} currentUser={props.currentUser} /></div>)
+}
+
 const Teams = props => {
 
-    return props.teams.map(team => <div key={team.id}><Team props={team} currentUser={props.currentUser} /></div>)
+    return (
+        <>
+        <h2 className="banner">Teams</h2>
+        {teamIteration(props)}
+        </>
+    )
 
 }
 
