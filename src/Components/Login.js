@@ -32,6 +32,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
       <form inline onSubmit={handleSubmit}>
         <div>
             <TextField
+              className="white"
               variant="filled"
               type="text" 
               value={loginFormData.username}
@@ -42,6 +43,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
         <br></br>
         <div>
             <TextField
+              className="white"
               variant="filled"
               type="password" 
               value={loginFormData.password} 

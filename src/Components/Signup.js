@@ -37,52 +37,65 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
     <>
       <br></br>
       <form inline onSubmit={ handleSubmit}>
+          <div>
           <TextField
+            className="white"
             variant="filled"
             type="text" 
             value={ signupFormData.firstname}
             name="firstname"
             placeholder="firstname"
             onChange={ handleInputChange} />
+            </div>
             <br></br>
 
+          <div>
           <TextField
+            className="white"
             variant="filled" 
             type="text" 
             value={ signupFormData.lastname}
             name="lastname"
             placeholder="lastname"
-            onChange={ handleInputChange} />
+            onChange={ handleInputChange} /></div>
         <br></br>
 
+          <div>
           <TextField
+            className="white"
             variant="filled" 
             type="text" 
             value={ signupFormData.location}
             name="location"
             placeholder="location"
-            onChange={ handleInputChange} />
+            onChange={ handleInputChange} /></div>
         <br></br>
 
+            <div>
             <TextField
+              className="white"
               variant="filled" 
               type="text" 
               value={ signupFormData.username}
               name="username"
               placeholder="username"
-              onChange={ handleInputChange} />
+              onChange={ handleInputChange} /></div>
         <br></br>
 
+            <div>
             <TextField
+              className="white"
               variant="filled" 
               type="text" 
               value={ signupFormData.email}
               name="email"
               placeholder="email"
-              onChange={ handleInputChange} />
+              onChange={ handleInputChange} /></div>
         <br></br>
 
+            <div></div>
             <TextField
+              className="white"
               variant="filled" 
               type="text" 
               value={ signupFormData.img_src}
@@ -91,7 +104,9 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
               onChange={ handleInputChange} />
         <br></br>
 
+          <div></div>
           <TextField
+            className="white"
             variant="filled" 
             type="password" 
             value={ signupFormData.password}
