@@ -1,5 +1,6 @@
 import { resetFavoriteForm } from './favoriteForm'
 
+const END_POINT = 'https://git.heroku.com/game-zone-api.git'
 
 export const setFavorites = favorites => {
     return {
@@ -30,7 +31,7 @@ export const clearFavorites = () => {
 
 export const fetchFavorites = () => {
     return dispatch => {
-          return fetch(`http://localhost:3001/api/v1/favorites`, {
+          return fetch(`${END_POINT}favorites`, {
             credentials: "include",
             method: "GET",
             headers: {
@@ -54,7 +55,7 @@ export const fetchFavorites = () => {
 export const createFavorite = (team_id, user_id) => {
   // console.log("hello")
   return dispatch => {
-      return fetch("http://localhost:3001/api/v1/favorites", {
+      return fetch("${END_POINT}favorites", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -80,7 +81,7 @@ export const createFavorite = (team_id, user_id) => {
 
 export const deleteFavorite = (favoriteId) => {
     return dispatch => {
-      return fetch(`http://localhost:3001/api/v1/favorites/${favoriteId}`, {
+      return fetch(`${END_POINT}favorites/${favoriteId}`, {
         credentials: "include",
         method: "DELETE",
         headers: {

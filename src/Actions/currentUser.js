@@ -3,6 +3,8 @@ import { resetSignupForm } from "./signupForm.js"
 import { fetchFavorites, clearFavorites } from "./favorites.js"
 import { fetchTeams, clearTeams } from "./teams"
 
+const END_POINT = 'https://git.heroku.com/game-zone-api.git'
+
 // synchronous action creators
 export const setCurrentUser = user => {
   return {
@@ -20,7 +22,7 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials, history) => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/login", {
+    return fetch(`${END_POINT}login`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -48,7 +50,7 @@ export const signup = (credentials, history) => {
     const userInfo = {
       user: credentials
     }
-    return fetch("http://localhost:3001/api/v1/signup", {
+    return fetch(`${END_POINT}signup`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -77,7 +79,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     dispatch(clearFavorites())
     dispatch(clearTeams())
-    return fetch('http://localhost:3001/api/v1/logout', {
+    return fetch(`${END_POINT}logout`, {
       credentials: "include",
       method: "DELETE"
     })
@@ -86,7 +88,7 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/get_current_user", {
+    return fetch(`${END_POINT}get_current_user`, {
       credentials: "include",
       method: "GET",
       headers: {
