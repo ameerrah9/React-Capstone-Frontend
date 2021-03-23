@@ -1,6 +1,6 @@
 import { resetFavoriteForm } from './favoriteForm'
 
-const END_POINT = 'https://git.heroku.com/game-zone-api.git'
+const END_POINT = 'https://game-zone-api.herokuapp.com/'
 
 export const setFavorites = favorites => {
     return {
