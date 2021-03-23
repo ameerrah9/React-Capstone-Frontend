@@ -1,6 +1,6 @@
 import teams from "../reducers/teams"
 
-const END_POINT = 'https://game-zone-api.herokuapp.com/'
+const END_POINT = 'https://game-zone-api.herokuapp.com/api/v1/'
 
 export const setTeams = teams => {
     return {

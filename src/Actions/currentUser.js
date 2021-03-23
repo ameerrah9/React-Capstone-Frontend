@@ -3,7 +3,7 @@ import { resetSignupForm } from "./signupForm.js"
 import { fetchFavorites, clearFavorites } from "./favorites.js"
 import { fetchTeams, clearTeams } from "./teams"
 
-const END_POINT = 'https://game-zone-api.herokuapp.com/'
+const END_POINT = 'https://game-zone-api.herokuapp.com/api/v1/'
 
 // synchronous action creators
 export const setCurrentUser = user => {
