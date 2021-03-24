@@ -22,7 +22,7 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials, history) => {
   return dispatch => {
-    return fetch(`https://game-zone-api.herokuapp.com/login`, {
+    return fetch(`https://game-zone-api.herokuapp.com/api/v1/login`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -50,7 +50,7 @@ export const signup = (credentials, history) => {
     const userInfo = {
       user: credentials
     }
-    return fetch(`${END_POINT}signup`, {
+    return fetch(`https://game-zone-api.herokuapp.com/api/v1/signup`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -79,7 +79,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     dispatch(clearFavorites())
     dispatch(clearTeams())
-    return fetch(`${END_POINT}logout`, {
+    return fetch(`https://game-zone-api.herokuapp.com/api/v1/logout`, {
       credentials: "include",
       method: "DELETE"
     })
@@ -88,7 +88,7 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch(`${END_POINT}get_current_user`, {
+    return fetch(`https://game-zone-api.herokuapp.com/api/v1/get_current_user`, {
       credentials: "include",
       method: "GET",
       headers: {

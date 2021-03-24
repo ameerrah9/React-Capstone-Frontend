@@ -31,7 +31,7 @@ export const clearFavorites = () => {
 
 export const fetchFavorites = () => {
     return dispatch => {
-          return fetch(`${END_POINT}favorites`, {
+          return fetch(`https://game-zone-api.herokuapp.com/api/v1/favorites`, {
             credentials: "include",
             method: "GET",
             headers: {
@@ -55,7 +55,7 @@ export const fetchFavorites = () => {
 export const createFavorite = (team_id, user_id) => {
   // console.log("hello")
   return dispatch => {
-      return fetch("${END_POINT}favorites", {
+      return fetch("https://game-zone-api.herokuapp.com/api/v1/favorites", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -81,7 +81,7 @@ export const createFavorite = (team_id, user_id) => {
 
 export const deleteFavorite = (favoriteId) => {
     return dispatch => {
-      return fetch(`${END_POINT}favorites/${favoriteId}`, {
+      return fetch(`https://game-zone-api.herokuapp.com/api/v1/favorites/${favoriteId}`, {
         credentials: "include",
         method: "DELETE",
         headers: {

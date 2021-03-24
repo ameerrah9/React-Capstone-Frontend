@@ -17,7 +17,7 @@ export const clearTeams = () => {
 
 export const fetchTeams = () => {
     return dispatch => {
-        return fetch(`${END_POINT}teams`, {
+        return fetch(`https://game-zone-api.herokuapp.com/api/v1/teams`, {
             credentials: "include",
             method: "GET",
             headers: {
@@ -38,7 +38,7 @@ export const fetchTeams = () => {
 
 // export const fetchTeamsFromSearch = (query) => {
 //     return dispatch => {
-//         return fetch('http://localhost:3001/api/v1/teams', {
+//         return fetch('https://game-zone-api.herokuapp.com/api/v1/teams', {
 //             credentials: "include",
 //             method: "GET",
 //             headers: {
