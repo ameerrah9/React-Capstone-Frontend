@@ -1,3 +1,4 @@
+import { Form, Button, FormGroup } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateSignupForm } from "../actions/signupForm.js"
@@ -6,7 +7,6 @@ import {
   Grid,
   Container,
   Input,
-  TextField,
   InputLabel,
   InputAdornment,
   FormControlLabel,
@@ -34,6 +34,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
+<<<<<<< HEAD
     <>
       <br></br>
       <form inline onSubmit={ handleSubmit}>
@@ -41,11 +42,17 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
           <TextField
             className="white"
             variant="filled"
+=======
+      <Form inline onSubmit={ handleSubmit}>
+        <Form.Group>
+          <Form.Control 
+>>>>>>> parent of e0354c9... adding style to components
             type="text" 
             value={ signupFormData.firstname}
             name="firstname"
             placeholder="firstname"
             onChange={ handleInputChange} />
+<<<<<<< HEAD
             </div>
             <br></br>
 
@@ -53,10 +60,16 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
           <TextField
             className="white"
             variant="filled" 
+=======
+  </Form.Group>
+            <Form.Group>
+          <Form.Control  
+>>>>>>> parent of e0354c9... adding style to components
             type="text" 
             value={ signupFormData.lastname}
             name="lastname"
             placeholder="lastname"
+<<<<<<< HEAD
             onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -64,10 +77,18 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
           <TextField
             className="white"
             variant="filled" 
+=======
+            onChange={ handleInputChange} />
+    </Form.Group>
+
+              <Form.Group>
+          <Form.Control  
+>>>>>>> parent of e0354c9... adding style to components
             type="text" 
             value={ signupFormData.location}
             name="location"
             placeholder="location"
+<<<<<<< HEAD
             onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -75,10 +96,18 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
             <TextField
               className="white"
               variant="filled" 
+=======
+            onChange={ handleInputChange} />
+    </Form.Group>
+
+    <Form.Group controlId="formBasicUsername">
+            <Form.Control  
+>>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={ signupFormData.username}
               name="username"
               placeholder="username"
+<<<<<<< HEAD
               onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -86,10 +115,18 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
             <TextField
               className="white"
               variant="filled" 
+=======
+              onChange={ handleInputChange} />
+    </Form.Group>
+
+    <Form.Group controlId="formBasicEmail">
+            <Form.Control  
+>>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={ signupFormData.email}
               name="email"
               placeholder="email"
+<<<<<<< HEAD
               onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -97,27 +134,38 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
             <TextField
               className="white"
               variant="filled" 
+=======
+              onChange={ handleInputChange} />
+    </Form.Group>
+
+              <Form.Group>
+            <Form.Control  
+>>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={ signupFormData.img_src}
               name="img_src"
               placeholder="profile photo"
               onChange={ handleInputChange} />
-        <br></br>
+    </Form.Group>
 
+<<<<<<< HEAD
           <div></div>
           <TextField
             className="white"
             variant="filled" 
+=======
+    <Form.Group controlId="formBasicPassword">
+          <Form.Control  
+>>>>>>> parent of e0354c9... adding style to components
             type="password" 
             value={ signupFormData.password}
             name="password"
             placeholder="password"
             onChange={ handleInputChange } />
-        <br></br>
+  </Form.Group>
 
           <Button variant="primary" value="Signup" type="submit">Signup</Button>
-      </form>
-      </>
+      </Form>
   );
 }
 

@@ -22,7 +22,13 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials, history) => {
   return dispatch => {
+<<<<<<< HEAD
     return fetch(`https://localhost3001/api/v1/login`, {
+=======
+    console.log("hello", credentials)
+
+    return fetch("http://localhost:3001/api/v1/login", {
+>>>>>>> parent of e0354c9... adding style to components
       credentials: "include",
       method: "POST",
       headers: {

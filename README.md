@@ -2,7 +2,6 @@
 
 Keep track of your favorite NBA teams. GameZone helps NBA fans get up-to-date information on their favorite NBA teams quickly.
 
-- Allows NBA lovers to communicate about their favorite teams
 - Uses Redux Thunk middleware to send and receive data from API
 - Renders JavaScript and HTML onto the DOM through React components
 - Allows for user authentication and authorizes users with sessions
