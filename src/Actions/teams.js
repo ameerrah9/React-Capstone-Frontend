@@ -1,6 +1,6 @@
 import teams from "../reducers/teams"
 
-const END_POINT = 'https://game-zone-api.herokuapp.com/api/v1/'
+const END_POINT = 'https://localhost3001/api/v1/'
 
 export const setTeams = teams => {
     return {
@@ -17,7 +17,7 @@ export const clearTeams = () => {
 
 export const fetchTeams = () => {
     return dispatch => {
-        return fetch(`https://game-zone-api.herokuapp.com/api/v1/teams`, {
+        return fetch(`https://localhost3001/api/v1/teams`, {
             credentials: "include",
             method: "GET",
             headers: {
@@ -38,7 +38,7 @@ export const fetchTeams = () => {
 
 // export const fetchTeamsFromSearch = (query) => {
 //     return dispatch => {
-//         return fetch('https://game-zone-api.herokuapp.com/api/v1/teams', {
+//         return fetch('https://localhost3001/api/v1/teams', {
 //             credentials: "include",
 //             method: "GET",
 //             headers: {
