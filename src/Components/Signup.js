@@ -11,9 +11,9 @@ import {
   InputAdornment,
   FormControlLabel,
   Checkbox,
+  TextField,
   Card,
   CardContent,
-  Button,
   FormControl
 } from '@material-ui/core';
 
@@ -34,7 +34,6 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-<<<<<<< HEAD
     <>
       <br></br>
       <form inline onSubmit={ handleSubmit}>
@@ -42,17 +41,11 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
           <TextField
             className="white"
             variant="filled"
-=======
-      <Form inline onSubmit={ handleSubmit}>
-        <Form.Group>
-          <Form.Control 
->>>>>>> parent of e0354c9... adding style to components
             type="text" 
             value={ signupFormData.firstname}
             name="firstname"
             placeholder="firstname"
             onChange={ handleInputChange} />
-<<<<<<< HEAD
             </div>
             <br></br>
 
@@ -60,16 +53,10 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
           <TextField
             className="white"
             variant="filled" 
-=======
-  </Form.Group>
-            <Form.Group>
-          <Form.Control  
->>>>>>> parent of e0354c9... adding style to components
             type="text" 
             value={ signupFormData.lastname}
             name="lastname"
             placeholder="lastname"
-<<<<<<< HEAD
             onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -77,18 +64,10 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
           <TextField
             className="white"
             variant="filled" 
-=======
-            onChange={ handleInputChange} />
-    </Form.Group>
-
-              <Form.Group>
-          <Form.Control  
->>>>>>> parent of e0354c9... adding style to components
             type="text" 
             value={ signupFormData.location}
             name="location"
             placeholder="location"
-<<<<<<< HEAD
             onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -96,18 +75,10 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
             <TextField
               className="white"
               variant="filled" 
-=======
-            onChange={ handleInputChange} />
-    </Form.Group>
-
-    <Form.Group controlId="formBasicUsername">
-            <Form.Control  
->>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={ signupFormData.username}
               name="username"
               placeholder="username"
-<<<<<<< HEAD
               onChange={ handleInputChange} /></div>
         <br></br>
 
@@ -115,57 +86,36 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
             <TextField
               className="white"
               variant="filled" 
-=======
-              onChange={ handleInputChange} />
-    </Form.Group>
-
-    <Form.Group controlId="formBasicEmail">
-            <Form.Control  
->>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={ signupFormData.email}
               name="email"
               placeholder="email"
-<<<<<<< HEAD
               onChange={ handleInputChange} /></div>
         <br></br>
 
-            <div></div>
+            <div>
             <TextField
               className="white"
               variant="filled" 
-=======
-              onChange={ handleInputChange} />
-    </Form.Group>
-
-              <Form.Group>
-            <Form.Control  
->>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={ signupFormData.img_src}
               name="img_src"
               placeholder="profile photo"
-              onChange={ handleInputChange} />
-    </Form.Group>
+              onChange={ handleInputChange} /></div>
 
-<<<<<<< HEAD
-          <div></div>
+          <div>
           <TextField
             className="white"
             variant="filled" 
-=======
-    <Form.Group controlId="formBasicPassword">
-          <Form.Control  
->>>>>>> parent of e0354c9... adding style to components
             type="password" 
             value={ signupFormData.password}
             name="password"
             placeholder="password"
-            onChange={ handleInputChange } />
-  </Form.Group>
+            onChange={ handleInputChange } /></div>
 
           <Button variant="primary" value="Signup" type="submit">Signup</Button>
-      </Form>
+      </form>
+      </>
   );
 }
 

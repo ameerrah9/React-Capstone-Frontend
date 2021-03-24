@@ -1,8 +1,5 @@
 body {
-<<<<<<< HEAD
     background-color: black;
-=======
->>>>>>> parent of e0354c9... adding style to components
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -19,7 +16,6 @@ body {
   * {
     background-color: black;
     color: red
-<<<<<<< HEAD
   }
 
   .photo-canvas {
@@ -46,6 +42,4 @@ body {
 
   .white {
     background-color: white;
-=======
->>>>>>> parent of e0354c9... adding style to components
   }

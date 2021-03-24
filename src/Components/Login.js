@@ -12,8 +12,8 @@ import {
   FormControlLabel,
   Checkbox,
   Card,
+  TextField,
   CardContent,
-  Button,
   FormControl
 } from '@material-ui/core';
 
@@ -36,37 +36,25 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     return (
       <Form inline onSubmit={handleSubmit}>
         <div>
-<<<<<<< HEAD
             <TextField
               className="white"
               variant="filled"
-=======
-        <Form.Group controlId="formBasicEmail">
-            <Form.Control 
->>>>>>> parent of e0354c9... adding style to components
               type="text" 
               value={loginFormData.username}
               placeholder="username"
               name="username"
               onChange={handleInputChange} />
-  </Form.Group>
         </div>
         <br></br>
         <div>
-<<<<<<< HEAD
             <TextField
               className="white"
               variant="filled"
-=======
-  <Form.Group controlId="formBasicPassword">
-            <Form.Control 
->>>>>>> parent of e0354c9... adding style to components
               type="password" 
               value={loginFormData.password} 
               placeholder="password"
               name="password"
               onChange={handleInputChange} />
-  </Form.Group>
         </div>
         <br></br>
 
