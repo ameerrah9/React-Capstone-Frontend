@@ -22,7 +22,7 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials, history) => {
   return dispatch => {
-    return fetch(`${END_POINT}login`, {
+    return fetch(`https://game-zone-api.herokuapp.com/api/v1/login`, {
       credentials: "include",
       method: "POST",
       headers: {
