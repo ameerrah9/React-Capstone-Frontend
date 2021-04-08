@@ -3,7 +3,7 @@ import { resetSignupForm } from "./signupForm.js"
 import { fetchFavorites, clearFavorites } from "./favorites.js"
 import { fetchTeams, clearTeams } from "./teams"
 
-const END_POINT = 'https://game-zone-api.herokuapp.com/api/v1/'
+const END_POINT = 'http://game-zone-api.herokuapp.com/api/v1/'
 
 // synchronous action creators
 export const setCurrentUser = user => {
@@ -50,7 +50,7 @@ export const signup = (credentials, history) => {
     const userInfo = {
       user: credentials
     }
-    return fetch(`https://localhost3001/api/v1/signup`, {
+    return fetch(`http://localhost:3001/api/v1/signup`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -79,7 +79,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     dispatch(clearFavorites())
     dispatch(clearTeams())
-    return fetch(`https://localhost3001/api/v1/logout`, {
+    return fetch(`http://localhost:3001/api/v1/logout`, {
       credentials: "include",
       method: "DELETE"
     })
@@ -88,7 +88,7 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch(`https://localhost3001/api/v1/get_current_user`, {
+    return fetch(`http://localhost:3001/api/v1/get_current_user`, {
       credentials: "include",
       method: "GET",
       headers: {

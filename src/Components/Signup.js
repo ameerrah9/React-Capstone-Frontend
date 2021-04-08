@@ -89,6 +89,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
               name="img_src"
               placeholder="profile photo"
               onChange={ handleInputChange} />
+        <br></br>
 
           <TextField
             variant="filled" 
@@ -97,8 +98,11 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
             name="password"
             placeholder="password"
             onChange={ handleInputChange } />
+        <br></br>
+        <br></br>
 
           <Button variant="primary" value="Signup" type="submit">Signup</Button>
+     
       </form>
       </>
   );

@@ -9,10 +9,9 @@ const NavBar = ({ currentUser, loggedIn }) => {
       <NavLink exact activeClassName="active" to="/teams" >All Teams</NavLink>
       <NavLink exact activeClassName="active" to="/about" >About</NavLink>
       <NavLink exact activeClassName="active" to="/favorites">My Favorites</NavLink>
-
       { loggedIn ? 
       <>
-        <div><img className="profile-photo" src={currentUser.attributes.img_src} width={75} height={75}/><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p></div><Logout/>
+        <div><img className="profile-photo" src={currentUser.attributes.img_src} width={50} height={50}/><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p></div><Logout/>
       </> : 
       null }
     </div>

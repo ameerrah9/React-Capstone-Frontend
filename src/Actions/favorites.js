@@ -1,6 +1,6 @@
 import { resetFavoriteForm } from './favoriteForm'
 
-const END_POINT = 'https://localhost3001/api/v1/'
+const END_POINT = 'http://localhost:3001/api/v1/'
 
 export const setFavorites = favorites => {
     return {
@@ -29,9 +29,21 @@ export const clearFavorites = () => {
     }
   }
 
+  export const sortTeams = () => {
+    console.log("in teams sort")
+    return {
+      type: 'SORT_TEAMS',
+    }
+  }
+
+  export const unSortTeams = () => {
+    return {
+      type: 'UNSORT_TEAMS',
+    }
+  }
 export const fetchFavorites = () => {
     return dispatch => {
-          return fetch(`https://localhost3001/api/v1/favorites`, {
+          return fetch(`http://localhost:3001/api/v1/favorites`, {
             credentials: "include",
             method: "GET",
             headers: {
@@ -50,12 +62,33 @@ export const fetchFavorites = () => {
   }
 }
 
+export const sortFavorites = () => {
+  return dispatch => {
+        return fetch(`http://localhost:3001/api/v1/favorites`, {
+          credentials: "include",
+          method: "GET",
+          headers: {
+              "Content-Type": "application/json"  
+          },
+          })
+          .then(r => r.json())
+    .then(response => {
+      if (response.error) {
+        alert(response.error)
+      } else {
+        dispatch(sortTeams(response.data))
+      }
+    })
+    .catch(console.log)
+}
+}
+
 // export const createFavorite = (team_id, history) => {
 
 export const createFavorite = (team_id, user_id) => {
   // console.log("hello")
   return dispatch => {
-      return fetch("https://localhost3001/api/v1/favorites", {
+      return fetch("http://localhost:3001/api/v1/favorites", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -81,7 +114,7 @@ export const createFavorite = (team_id, user_id) => {
 
 export const deleteFavorite = (favoriteId) => {
     return dispatch => {
-      return fetch(`https://localhost3001/api/v1/favorites/${favoriteId}`, {
+      return fetch(`http://localhost:3001/api/v1/favorites/${favoriteId}`, {
         credentials: "include",
         method: "DELETE",
         headers: {

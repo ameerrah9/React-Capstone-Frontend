@@ -6,8 +6,7 @@ const MainContainer = () => {
 
   return (
       <div className="MainContainer">
-        <Favorites />
-        {/* <Teams /> */}
+        <Favorites />     
       </div>
   )
 }

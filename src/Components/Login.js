@@ -19,7 +19,7 @@ import {
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target
     const updatedFormInfo = {
       ...loginFormData,
@@ -34,7 +34,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
   }
   
     return (
-      <Form inline onSubmit={handleSubmit}>
+      <form inline onSubmit={handleSubmit}>
         <div>
             <TextField
               variant="filled"
@@ -57,7 +57,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
         <br></br>
 
           <Button variant="primary" value="Login" type="submit">Login</Button>
-      </Form>
+      </form>
   );
 }
 

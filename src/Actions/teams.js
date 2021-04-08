@@ -1,6 +1,6 @@
 import teams from "../reducers/teams"
 
-const END_POINT = 'https://localhost3001/api/v1/'
+const END_POINT = 'http://localhost3001/api/v1/'
 
 export const setTeams = teams => {
     return {
@@ -17,7 +17,7 @@ export const clearTeams = () => {
 
 export const fetchTeams = () => {
     return dispatch => {
-        return fetch(`https://localhost3001/api/v1/teams`, {
+        return fetch(`http://localhost:3001/api/v1/teams`, {
             credentials: "include",
             method: "GET",
             headers: {

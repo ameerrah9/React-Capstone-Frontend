@@ -33,7 +33,7 @@ const Team = ({ props, createFavorite, currentUser }) => {
           <img className="logo" src={props.attributes.logo_url} width={50} height={30}/>
           <h4>{props.attributes.name} ({props.attributes.wins} - {props.attributes.losses})</h4>
           <button onClick={handleClick}>Add to Favorites</button>
-
+          
         <br></br>
         </div>
         <br></br>
