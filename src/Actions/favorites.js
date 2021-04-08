@@ -29,18 +29,6 @@ export const clearFavorites = () => {
     }
   }
 
-  export const sortTeams = () => {
-    console.log("in teams sort")
-    return {
-      type: 'SORT_TEAMS',
-    }
-  }
-
-  export const unSortTeams = () => {
-    return {
-      type: 'UNSORT_TEAMS',
-    }
-  }
 export const fetchFavorites = () => {
     return dispatch => {
           return fetch(`http://localhost:3001/api/v1/favorites`, {
@@ -62,26 +50,6 @@ export const fetchFavorites = () => {
   }
 }
 
-export const sortFavorites = () => {
-  return dispatch => {
-        return fetch(`http://localhost:3001/api/v1/favorites`, {
-          credentials: "include",
-          method: "GET",
-          headers: {
-              "Content-Type": "application/json"  
-          },
-          })
-          .then(r => r.json())
-    .then(response => {
-      if (response.error) {
-        alert(response.error)
-      } else {
-        dispatch(sortTeams(response.data))
-      }
-    })
-    .catch(console.log)
-}
-}
 
 // export const createFavorite = (team_id, history) => {
 
