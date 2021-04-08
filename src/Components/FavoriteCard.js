@@ -6,8 +6,7 @@ import { connect } from 'react-redux'
 
 const Favorite = ( { sorted, toggleButton, unToggleButton, favorites, deleteFavorite } ) => {
 
-  console.log(sorted)
-  
+  console.log(favorites)
   const handleClick = event => {
     event.preventDefault()
     deleteFavorite(favorites.id)
