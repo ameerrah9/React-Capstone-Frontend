@@ -1,39 +1,37 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom"
+import React from 'react'
 import { connect } from 'react-redux'
-import fetchTeams from "../actions/fetchTeams"
-import NavBar from "../components/NavBar"
-import TeamInput from '../components/TeamInput'
-import Teams from "../components/Teams"
-import Team from "../components/Team"
+import { Link } from 'react-router-dom'
+import TeamCard from '../components/Teams/TeamCard'
 
-class TeamsContainer extends Component {
+class Teams extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchTeams()
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return (
-      <>
-        <NavBar/>
-        <Switch>
-          <h2 >The Latest Teams:</h2>
-        
-          <Route exact path='/teams/new' component={TeamInput} />
 
-          <Route path='/teams/:id' render={(routerProps) => <Team {...routerProps} teams={this.props.teams}/>}/>
+    render() {
 
-          <Route path='/teams' render={(routerProps) => <Teams {...routerProps} teams={this.props.teams}/>}/>
+        return (
 
-        </Switch>
-      </>
-    );
-  }
-  
+                <div className="teamlist">
+                    {this.props.teams.map(team =>
+                        <TeamCard 
+                            team={team} 
+                            key={team.id}                     
+                            currentUser={this.props.currentUser}
+                            />
+                        )}
+                </div>
+        ) 
+    }
 }
-function mapStateToProps(state){
-  return { teams: state.teams };
-};
 
-export default connect(mapStateToProps, {fetchTeams})(TeamsContainer)
+    const mapStateToProps = state => {
+        return {
+            teams: state.teams,
+            currentUser: state.currentUser
+        }
+    }
+
+export default connect(mapStateToProps)(Teams)

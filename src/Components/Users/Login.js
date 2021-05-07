@@ -1,8 +1,9 @@
 import { Form, Button, FormGroup } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateLoginForm } from "../actions/loginForm.js"
-import { login } from "../actions/currentUser.js"
+import { updateLoginForm } from "../../actions/loginForm.js"
+import { login } from "../../actions/currentUser.js"
+
 import {
   Grid,
   Container,
@@ -36,7 +37,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     return (
       <form inline onSubmit={handleSubmit}>
         <div>
-            <TextField
+            <input
               variant="filled"
               type="text" 
               value={loginFormData.username}
@@ -46,7 +47,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
         </div>
         <br></br>
         <div>
-            <TextField
+            <input
               variant="filled"
               type="password" 
               value={loginFormData.password} 
