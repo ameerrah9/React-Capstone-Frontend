@@ -13,16 +13,20 @@ class Teams extends React.Component {
     render() {
 
         return (
-
-                <div className="teamlist">
-                    {this.props.teams.map(team =>
-                        <TeamCard 
-                            team={team} 
-                            key={team.id}                     
-                            currentUser={this.props.currentUser}
-                            />
-                        )}
-                </div>
+            <>
+                <h3>ALL TEAMS</h3>
+                <h5>You can add teams to your favorites, view the latest standings and rankings.</h5>
+                <br></br>
+                    <div className="teamlist">
+                        {this.props.teams.map(team =>
+                            <TeamCard 
+                                team={team} 
+                                key={team.id}                     
+                                currentUser={this.props.currentUser}
+                                />
+                            )}
+                    </div>
+                </>
         ) 
     }
 }

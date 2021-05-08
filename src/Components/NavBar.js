@@ -5,15 +5,22 @@ import Logout from '../components/Users/Logout'
 
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
-    <div className="NavBar">
-      <NavLink exact activeClassName="active" to="/teams" >All Teams</NavLink>
-      <NavLink exact activeClassName="active" to="/about" >About</NavLink>
-      <NavLink exact activeClassName="active" to="/favorites">My Favorites</NavLink>
-      { loggedIn ? 
-      <>
-        <div><img className="profile-photo" src={currentUser.attributes.img_src} width={50} height={50}/><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p></div><Logout/>
-      </> : 
-      null }
+    <div>
+
+      <div className="NavBar">
+        <ul>
+          <li><NavLink exact activeClassName="active" to="/teams" >All Teams</NavLink></li>
+          <li><NavLink exact activeClassName="active" to="/about" >About</NavLink></li>
+          <li><NavLink exact activeClassName="active" to="/favorites">My Favorites</NavLink></li>
+          { loggedIn ? 
+              <>
+              <li id="loggedin">Logged in as {currentUser.attributes.firstname}</li><Logout/>
+              </> : 
+              null }
+        </ul>
+      </div>
+      { loggedIn ?<img className="profile-photo" src={currentUser.attributes.img_src} width={50} height={50}/>
+      : null }
     </div>
   )
 }

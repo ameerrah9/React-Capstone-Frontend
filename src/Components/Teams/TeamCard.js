@@ -7,15 +7,13 @@ const TeamCard = ( { team, createFavorite, currentUser } ) => {
 
   const handleClick = event => {
     event.preventDefault()
-    console.log(team.id)
     createFavorite(team.id, currentUser.id)
   }
 
   return (
-    <div>
       <div key={team.id}>
         <div>
-          <div key={team.attributes.id}>
+          <div className="team" key={team.attributes.id}>
 
           <br></br>
             <h3>Ranking: {team.attributes.conference_rank}</h3>
@@ -27,8 +25,6 @@ const TeamCard = ( { team, createFavorite, currentUser } ) => {
           </div>
           <br></br>
         </div>
-      </div>
-
     </div>
     )
 }

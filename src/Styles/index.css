@@ -2,10 +2,12 @@
 
 .App {
   text-align: center;
-  padding: 35px;
-  margin: 35px;
+  padding: 5px;
+  margin: 5px;
   background-color: #282c31;
   font-family: 'Zen Dots', cursive;
+  flex-direction: column;
+  display: flex;
 }
 
 .App-header {
@@ -20,32 +22,28 @@
 
 }
 
-body {
-  background-color: black;
-  color: white;
-}
-
 #loggedin {
-  font-size: 7px;
+  font-size: 12px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.NavBar {
+.NavBar > ul {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
+  background-color: #282c31; 
+
+}
+
+.NavBar > ul > li {
+  margin: 5px;
 }
 
 .logo {
   height: 50px;
-width: 50px;
-}
-
-.MainContainer {
-text-align: center;
+  width: 50px;
 }
 
 body {
@@ -66,37 +64,13 @@ body {
     color: red
   }
 
-  .photo-canvas {
-  display: inline-block;
-  position: relative;
-  padding: 0;
-  width: 250px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 65%;  
-}
-
   .profile-photo {
     width: auto;
     height: 110px;
     margin-left: 25px;
     border-radius: 35%;
-  }
+    /* display: block; */
 
-  .banner {
-    margin-right: 50px;
-
-  }
-
-  .white {
-    background-color: white;
-  }
-
-  .NavBar {
-    width: 95%;
-    height: 25px;
-    margin-left: 25px;
-    padding: 0;
   }
 
   .form {
@@ -106,9 +80,7 @@ body {
   .teamlist {
     display: flex;
     flex-wrap: wrap;
-    border-color: white;
-    border-width: 4px;
-    padding-top: 250px;
+    background-color: cornsilk;    
     padding-left: 70px;
 
   }
@@ -117,15 +89,21 @@ body {
     width: 280px;
   }
 
+  .team {
+    /* background-color: black;    */
+    /* padding: 15px;  */
+
+  }
+
+  .team > div {
+    width: 280px;
+  }
+
   .favlist {
     display: flex;
-    flex-wrap: wrap;
-    border-color: white;
-    border-width: 4px;
-    padding-top: 250px;
+    background-color: cornsilk;    
     padding-left: 70px;
-    text-align: center;
-
+    
   }
 
   .favlist > div {

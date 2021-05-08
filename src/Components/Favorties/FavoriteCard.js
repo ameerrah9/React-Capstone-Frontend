@@ -13,10 +13,9 @@ const Favorite = ( { fav, deleteFavorite } ) => {
 
 
   return (
-    <div id="flex1">
       <div key={fav.id}>
-        <div>
-          <div key={fav.attributes.team.id}>
+        <>
+          <div className="team" key={fav.attributes.team.id}>
 
           <br></br>
             <h3>Ranking: {fav.attributes.team.conference_rank}</h3>
@@ -28,9 +27,8 @@ const Favorite = ( { fav, deleteFavorite } ) => {
           <br></br>
           </div>
           <br></br>
-        </div>
+        </>
       </div>
-    </div>
   )
 }
 
