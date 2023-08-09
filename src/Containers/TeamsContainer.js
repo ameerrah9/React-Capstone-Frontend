@@ -1,15 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import TeamCard from '../components/Teams/TeamCard'
+import React from 'react';
+import { connect } from 'react-redux';
+import TeamCard from '../Components/Teams/TeamCard';
 
 class Teams extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-
     render() {
 
         return (
@@ -17,17 +10,17 @@ class Teams extends React.Component {
                 <h3>ALL TEAMS</h3>
                 <h5>You can add teams to your favorites, view the latest standings and rankings.</h5>
                 <br></br>
-                    <div className="teamlist">
+                    <div className='teamlist'>
                         {this.props.teams.map(team =>
-                            <TeamCard 
-                                team={team} 
-                                key={team.id}                     
+                            <TeamCard
+                                team={team}
+                                key={team.id}
                                 currentUser={this.props.currentUser}
                                 />
                             )}
                     </div>
                 </>
-        ) 
+        )
     }
 }
 
