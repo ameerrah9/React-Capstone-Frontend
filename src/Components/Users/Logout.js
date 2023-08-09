@@ -1,8 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { logout } from "../../actions/currentUser"
-import { withRouter } from 'react-router-dom'
-import { Form, Button, InputGroup } from 'react-bootstrap'
+import React from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../../Actions/currentUser';
+import { withRouter } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Logout = ({ logout, history }) => {
   return (
@@ -12,7 +12,7 @@ const Logout = ({ logout, history }) => {
         history.push('/')
       }
     }>
-      <Button variant="primary" value="Log Out" type="submit">Logout</Button>
+      <Button variant='primary' value='Log Out' type='submit'>Logout</Button>
 
     </form>
   )

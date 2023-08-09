@@ -1,22 +1,9 @@
-import { Form, Button, FormGroup } from 'react-bootstrap'
-import React from 'react'
-import { connect } from 'react-redux'
-import { updateLoginForm } from "../../actions/loginForm.js"
-import { login } from "../../actions/currentUser.js"
+import { Button } from 'react-bootstrap';
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateLoginForm } from '../../Actions/loginForm';
+import { login } from '../../Actions/currentUser';
 
-import {
-  Grid,
-  Container,
-  Input,
-  InputLabel,
-  InputAdornment,
-  FormControlLabel,
-  Checkbox,
-  Card,
-  TextField,
-  CardContent,
-  FormControl
-} from '@material-ui/core';
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
@@ -33,31 +20,31 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     event.preventDefault()
     login(loginFormData, history)
   }
-  
+
     return (
       <form inline onSubmit={handleSubmit}>
         <div>
             <input
-              variant="filled"
-              type="text" 
+              variant='filled'
+              type='text'
               value={loginFormData.username}
-              placeholder="username"
-              name="username"
+              placeholder='username'
+              name='username'
               onChange={handleInputChange} />
         </div>
         <br></br>
         <div>
             <input
-              variant="filled"
-              type="password" 
-              value={loginFormData.password} 
-              placeholder="password"
-              name="password"
+              variant='filled'
+              type='password'
+              value={loginFormData.password}
+              placeholder='password'
+              name='password'
               onChange={handleInputChange} />
         </div>
         <br></br>
 
-          <Button variant="primary" value="Login" type="submit">Login</Button>
+          <Button variant='primary' value='Login' type='submit'>Login</Button>
       </form>
   );
 }

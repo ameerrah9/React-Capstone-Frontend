@@ -1,8 +1,8 @@
-import { Form, Button, FormGroup } from 'react-bootstrap'
-import React from 'react'
-import { connect } from 'react-redux'
-import { updateSignupForm } from "../actions/signupForm.js"
-import { signup } from "../actions/currentUser.js"
+import { Form, Button, FormGroup } from 'react-bootstrap';
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateSignupForm } from '../actions/signupForm';
+import { signup } from '../actions/currentUser';
 import {
   Grid,
   Container,
@@ -38,71 +38,71 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
       <br></br>
       <form inline onSubmit={ handleSubmit}>
           <TextField
-            variant="filled"
-            type="text" 
+            variant='filled'
+            type='text'
             value={ signupFormData.firstname}
-            name="firstname"
-            placeholder="firstname"
+            name='firstname'
+            placeholder='firstname'
             onChange={ handleInputChange} />
             <br></br>
 
           <TextField
-            variant="filled" 
-            type="text" 
+            variant='filled'
+            type='text'
             value={ signupFormData.lastname}
-            name="lastname"
-            placeholder="lastname"
+            name='lastname'
+            placeholder='lastname'
             onChange={ handleInputChange} />
         <br></br>
 
           <TextField
-            variant="filled" 
-            type="text" 
+            variant='filled'
+            type='text'
             value={ signupFormData.location}
-            name="location"
-            placeholder="location"
+            name='location'
+            placeholder='location'
             onChange={ handleInputChange} />
         <br></br>
 
             <TextField
-              variant="filled" 
-              type="text" 
+              variant='filled'
+              type='text'
               value={ signupFormData.username}
-              name="username"
-              placeholder="username"
+              name='username'
+              placeholder='username'
               onChange={ handleInputChange} />
         <br></br>
 
             <TextField
-              variant="filled" 
-              type="text" 
+              variant='filled'
+              type='text'
               value={ signupFormData.email}
-              name="email"
-              placeholder="email"
+              name='email'
+              placeholder='email'
               onChange={ handleInputChange} />
         <br></br>
 
             <TextField
-              variant="filled" 
-              type="text" 
+              variant='filled'
+              type='text'
               value={ signupFormData.img_src}
-              name="img_src"
-              placeholder="profile photo"
+              name='img_src'
+              placeholder='profile photo'
               onChange={ handleInputChange} />
         <br></br>
 
           <TextField
-            variant="filled" 
-            type="password" 
+            variant='filled'
+            type='password'
             value={ signupFormData.password}
-            name="password"
-            placeholder="password"
+            name='password'
+            placeholder='password'
             onChange={ handleInputChange } />
         <br></br>
         <br></br>
 
-          <Button variant="primary" value="Signup" type="submit">Signup</Button>
-     
+          <Button variant='primary' value='Signup' type='submit'>Signup</Button>
+
       </form>
       </>
   );

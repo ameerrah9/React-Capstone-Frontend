@@ -1,7 +1,7 @@
 import React from 'react';
-import FavoriteForm from './FavoriteForm'
-import { createFavorite } from '../actions/favorites'
-import { connect } from 'react-redux'
+import FavoriteForm from './FavoriteForm';
+import { createFavorite } from '../actions/favorites';
+import { connect } from 'react-redux';
 
 const NewFavoriteFormWrapper = ({ history, createFavorite }) => {
 
