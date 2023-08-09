@@ -1,30 +1,26 @@
-import { resetFavoriteForm } from './favoriteForm'
-
-const END_POINT = 'http://localhost:3001/api/v1/'
-
 export const setFavorites = favorites => {
     return {
-        type: "SET_FAVORITES",
+        type: 'SET_FAVORITES',
         favorites
-    } 
+    }
 }
 
 export const clearFavorites = () => {
     return {
-      type: "CLEAR_FAVORITES"
+      type: 'CLEAR_FAVORITES'
     }
   }
-  
+
   export const addFavorite = favorite => {
     return {
-      type: "ADD_FAVORITE",
+      type: 'ADD_FAVORITE',
       favorite
     }
   }
-  
+
   export const deleteFavoriteSuccess = favoriteId => {
     return {
-      type: "DELETE_FAVORITE",
+      type: 'DELETE_FAVORITE',
       favoriteId
     }
   }
@@ -32,10 +28,10 @@ export const clearFavorites = () => {
 export const fetchFavorites = () => {
     return dispatch => {
           return fetch(`http://localhost:3001/api/v1/favorites`, {
-            credentials: "include",
-            method: "GET",
+            credentials: 'include',
+            method: 'GET',
             headers: {
-                "Content-Type": "application/json"  
+                'Content-Type': 'application/json'
             },
             })
             .then(r => r.json())
@@ -50,17 +46,13 @@ export const fetchFavorites = () => {
   }
 }
 
-
-// export const createFavorite = (team_id, history) => {
-
 export const createFavorite = (team_id, user_id) => {
-  // console.log("hello")
   return dispatch => {
-      return fetch("http://localhost:3001/api/v1/favorites", {
-        credentials: "include",
-        method: "POST",
+      return fetch('http://localhost:3001/api/v1/favorites', {
+        credentials: 'include',
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           user_id: parseInt(user_id),
@@ -83,10 +75,10 @@ export const createFavorite = (team_id, user_id) => {
 export const deleteFavorite = (favoriteId) => {
     return dispatch => {
       return fetch(`http://localhost:3001/api/v1/favorites/${favoriteId}`, {
-        credentials: "include",
-        method: "DELETE",
+        credentials: 'include',
+        method: 'DELETE',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         }
       })
         .then(r => r.json())
@@ -98,9 +90,9 @@ export const deleteFavorite = (favoriteId) => {
           }
         })
         .catch(console.log)
-  
+
     }
-  
+
   }
 
 export default fetchFavorites

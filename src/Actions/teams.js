@@ -1,12 +1,10 @@
-import teams from "../reducers/teams"
-
-const END_POINT = 'http://localhost3001/api/v1/'
+import teams from "../Reducers/teams"
 
 export const setTeams = teams => {
     return {
         type: "SET_TEAMS",
         teams
-    } 
+    }
 }
 
 export const clearTeams = () => {
@@ -21,7 +19,7 @@ export const fetchTeams = () => {
             credentials: "include",
             method: "GET",
             headers: {
-                "Content-Type": "application/json"  
+                "Content-Type": "application/json"
             },
             })
             .then(r => r.json())
@@ -43,7 +41,7 @@ export const fetchTeamsFromSearch = (query) => {
             credentials: "include",
             method: "GET",
             headers: {
-                "Content-Type": "application/json"  
+                "Content-Type": "application/json"
             },
         })
             .then(resp => resp.json())

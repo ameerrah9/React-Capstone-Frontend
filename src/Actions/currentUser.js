@@ -1,32 +1,30 @@
-import { resetLoginForm } from "./loginForm.js"
-import { resetSignupForm } from "./signupForm.js"
-import { fetchFavorites, clearFavorites } from "./favorites.js"
-import { fetchTeams, clearTeams } from "./teams"
-
-const END_POINT = 'http://game-zone-api.herokuapp.com/api/v1/'
+import { resetLoginForm } from './loginForm.js';
+import { resetSignupForm } from './signupForm.js';
+import { fetchFavorites, clearFavorites } from './favorites.js';
+import { fetchTeams, clearTeams } from './teams';
 
 // synchronous action creators
 export const setCurrentUser = user => {
   return {
-    type: "SET_CURRENT_USER",
+    type: 'SET_CURRENT_USER',
     user
   }
 }
 
 export const clearCurrentUser = () => {
   return {
-    type: "CLEAR_CURRENT_USER"
+    type: 'CLEAR_CURRENT_USER'
   }
 }
 
 // asynchronous action creators
 export const login = (credentials, history) => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/login", {
-      credentials: "include",
-      method: "POST",
+    return fetch('http://localhost:3001/api/v1/login', {
+      credentials: 'include',
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(credentials)
     })
@@ -51,10 +49,10 @@ export const signup = (credentials, history) => {
       user: credentials
     }
     return fetch(`http://localhost:3001/api/v1/signup`, {
-      credentials: "include",
-      method: "POST",
+      credentials: 'include',
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(userInfo)
     })
@@ -80,8 +78,8 @@ export const logout = event => {
     dispatch(clearFavorites())
     dispatch(clearTeams())
     return fetch(`http://localhost:3001/api/v1/logout`, {
-      credentials: "include",
-      method: "DELETE"
+      credentials: 'include',
+      method: 'DELETE'
     })
   }
 }
@@ -89,10 +87,10 @@ export const logout = event => {
 export const getCurrentUser = () => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/get_current_user`, {
-      credentials: "include",
-      method: "GET",
+      credentials: 'include',
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
     })
       .then(r => r.json())
