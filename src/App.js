@@ -1,18 +1,19 @@
 // import '../styles/App.css';
 import React from 'react';
-import { connect } from 'react-redux'
-import { getCurrentUser } from './actions/currentUser'
-import { fetchTeams } from './actions/teams'
-import NavBar from './components/NavBar.js';
-import TeamsContainer from './Containers/TeamsContainer'
-import Favorites from './Containers/FavoritesContainer'
-import Signup from './components/Users/Logout';
-import About from './components/About'
-import Login from './components/Users/Login';
-import Home from './components/Home'
-import MainContainer from './Containers/MainContainer'
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
-import favorites from './reducers/favorites';
+import { connect } from 'react-redux';
+import { getCurrentUser } from './Actions/currentUser';
+import { fetchTeams } from './Actions/teams';
+import NavBar from './Components/NavBar';
+import TeamsContainer from './Containers/TeamsContainer';
+import Favorites from './Containers/FavoritesContainer';
+import Signup from './Components/Users/Logout';
+import About from './Components/About';
+import Login from './Components/Users/Login';
+import Home from './Components/Home';
+import MainContainer from './Containers/MainContainer';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import favorites from './Reducers/favorites';
+
 class App extends React.Component {
 
   componentDidMount() {
@@ -23,7 +24,7 @@ class App extends React.Component {
   render() {
     const { loggedIn } = this.props
     return (
-      <div className="App">
+      <div className='App'>
         { loggedIn ? <NavBar /> : <Home/> }
         <Switch>
           <Route exact path='/' component={MainContainer}/>
